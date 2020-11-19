@@ -1,12 +1,12 @@
 import s from "./App.module.css";
 import React from "react";
 import ButtonC from "./components/ButtonC";
-import Input from "./components/Input";
 import InputC from "./components/InputC";
+import Input2C from "./components/Input2C";
 
 function App() {
   return (
-      <div className={s.grid}  >
+      <div className={s.grid}>
           <div className={s.item}>
               <ButtonC className={s.btnPM} name="+/-" />
               <ButtonC className={s.btn0} name="0"/>
@@ -45,7 +45,7 @@ function App() {
               <ButtonC className={`${s.btnM} ${s.backgroun2}`} disabled name="M"/>
 
               <InputC className={`${s.input} ${s.backgroun2}`}/>
-              <InputC className={`${s.inputUP} ${s.backgroun2}`}/>
+              <Input2C className={`${s.inputUP} ${s.backgroun2}`}/>
 
               <div className={s.label}>Калькулятор</div>
 
