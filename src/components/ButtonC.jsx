@@ -1,6 +1,14 @@
 import Button from "./Button";
 import {connect} from "react-redux";
-import {actCrEQUALS, actCrMINUS, addSymbolCreator} from "../redux/mainReducer";
+import {
+    actCrC,
+    actCrEQUALS,
+    actCrMINUS,
+    actCrMULT,
+    actCrPLUS,
+    actCrSHARE,
+    addSymbolCreator
+} from "../redux/mainReducer";
 
 
 let mapStateToProps = (state) => {
@@ -14,7 +22,11 @@ let mapDispatchToProps = (dispatch) => {
         addSymbol: (symbolOfButton) =>
             dispatch(addSymbolCreator(symbolOfButton)),
         clickEQUALS: (cV) => dispatch(actCrEQUALS(cV)),
-        clickMINUS: (cV) => dispatch(actCrMINUS(cV))
+        clickMINUS: (cV) => dispatch(actCrMINUS(cV)),
+        clickPLUS: (cV) => dispatch(actCrPLUS(cV)),
+        clickMULT:(cV) =>dispatch(actCrMULT(cV)),
+        clickSHARE:(cV) =>dispatch(actCrSHARE(cV)),
+        clickCLEAR:() =>dispatch(actCrC())
     }
 }
 

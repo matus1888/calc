@@ -12,9 +12,17 @@ const Button = (props) => {
             props.clickEQUALS(props.cV)
         }else if(props.name==='-'){
             props.clickMINUS(props.cV)
+        }else if(props.name==='+'){
+            props.clickPLUS(props.cV)
+        }else if(props.name==='x'){
+            props.clickMULT(props.cV)
+        }else if(props.name==='/'){
+            props.clickSHARE(props.cV)
+        }else if(props.name==='C'){
+            props.clickCLEAR()
         }
         else{
-            console.log("реализуй функцию для нажатия на эту кнопку")
+            console.log("реализуй функцию для нажатия на эту кнопку"+props.name)
         }
     }
     return (<button className={props.className} disabled={props.disabled}

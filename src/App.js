@@ -31,7 +31,7 @@ function App() {
               <ButtonC className={`${s.btnONEX} ${s.backgroun3}`} name="1/x"/>
               <ButtonC className={`${s.btnKVADRAT} ${s.backgroun3}`} name="x^2"/>
               <ButtonC className={`${s.btnKOREN} ${s.backgroun3}`} name="&#8730;x"/>
-              <ButtonC className={`${s.btnDELEN} ${s.backgroun3}`} name="&#247;"/>
+              <ButtonC className={`${s.btnDELEN} ${s.backgroun3}`} name='/'/>
 
               <ButtonC className={`${s.btnPROC} ${s.backgroun3}`} name="%"/>
               <ButtonC className={`${s.btnCE} ${s.backgroun3}`} name="CE"/>
