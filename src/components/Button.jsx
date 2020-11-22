@@ -22,6 +22,16 @@ const Button = (props) => {
             props.clickCLEAR()
         }else if(props.name===','){
             props.clickCOMMA()
+        }else if(props.name==='x^2'){
+            props.clickSQUARE(props.cV)
+        }else if(props.name==='1/x'){
+            props.clickINVERSE(props.cV)
+        }else if(props.name==='CE'){
+            props.clickCE(props.cV)
+        }else if(props.name==='root(x)'){
+            props.clickROOT(props.cV)
+        }else if(props.id==='backspace'){
+            props.clickBACKSPACE(props.cV)
         }
         else{
             console.log("реализуй функцию для нажатия на эту кнопку"+props.name)
