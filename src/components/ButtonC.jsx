@@ -7,7 +7,8 @@ import {
     actCrMULT,
     actCrPLUS,
     actCrSHARE,
-    addSymbolCreator
+    addSymbolCreator,
+    actCrCOMMA
 } from "../redux/mainReducer";
 
 
@@ -26,7 +27,8 @@ let mapDispatchToProps = (dispatch) => {
         clickPLUS: (cV) => dispatch(actCrPLUS(cV)),
         clickMULT:(cV) =>dispatch(actCrMULT(cV)),
         clickSHARE:(cV) =>dispatch(actCrSHARE(cV)),
-        clickCLEAR:() =>dispatch(actCrC())
+        clickCLEAR:() =>dispatch(actCrC()),
+        clickCOMMA:() =>dispatch(actCrCOMMA())
     }
 }
 

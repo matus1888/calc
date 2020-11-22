@@ -20,6 +20,8 @@ const Button = (props) => {
             props.clickSHARE(props.cV)
         }else if(props.name==='C'){
             props.clickCLEAR()
+        }else if(props.name===','){
+            props.clickCOMMA()
         }
         else{
             console.log("реализуй функцию для нажатия на эту кнопку"+props.name)
