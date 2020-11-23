@@ -8,21 +8,39 @@ class Application extends React.Component {
     constructor(props) {
         super(props);
         // Эта привязка обязательна для работы `this` в колбэке.
-        this.oneFunction = this.oneFunction.bind(this);
-        //todo all calc buttons on real keyboard keys
+        this.keyFunction = this.keyFunction.bind(this);
+
     }
-    oneFunction(event){
-        if((event.keyCode === 97)||(event.keyCode === 49)) {
-            this.props.pressKey('1')
+    keyFunction(event){
+        //todo all calc buttons on real keyboard keys
+        let condition=(numpad, digit=true)=>{return ((event.keyCode===numpad)||(event.keyCode===digit))}
+        if(condition(97,49)) {this.props.pressKey('1')
+        }else if(condition(98,50)){this.props.pressKey('2')
+        }else if(condition(99,51)){this.props.pressKey('3')
+        }else if(condition(100,52)){this.props.pressKey('4')
+        }else if(condition(101,53)){this.props.pressKey('5')
+        }else if(condition(102,54)){this.props.pressKey('6')
+        }else if(condition(103,55)){this.props.pressKey('7')
+        }else if(condition(104,56)){this.props.pressKey('8')
+        }else if(condition(105,57)){this.props.pressKey('9')
+        }else if(condition(96,48)){this.props.pressKey('0')
+        }else if(condition(111)){this.props.pressKeySHARE()
+        }else if(condition(106)){this.props.pressKeyMULT()
+        }else if(condition(189,109)){this.props.pressKeyMINUS()
+        }else if(condition(107)){this.props.pressKeyPLUS()
+        }else if(condition(187,13)){this.props.pressKeyEQUALS()
+        }else if(condition(8)){this.props.pressKeyBACKSPACE()
+        }else if(condition(110)){this.props.pressKeyCOMMA()
+        }else if(condition(46)){this.props.pressKeyC()
         }
     }
     componentDidMount() {
-        document.addEventListener("keydown", this.oneFunction, false);
-        console.log(this.props)
+        document.addEventListener("keydown", this.keyFunction, false);
+        // console.log(this.props)
     }
 
     componentWillUnmount() {
-        document.removeEventListener("keydown", this.oneFunction, false);
+        document.removeEventListener("keydown", this.keyFunction, false);
     }
 
     render(){
@@ -64,7 +82,7 @@ class Application extends React.Component {
                 <ButtonC className={`${s.btnMMINUS} ${s.backgroun2}`} name="M-"/>
                 <ButtonC className={`${s.btnM} ${s.backgroun2}`} disabled name="M"/>
 
-                <InputC className={`${s.input} ${s.backgroun2}`}/>
+                <InputC className={`${s.input} ${s.backgroun2} `}/>
                 <Input2C className={`${s.inputUP} ${s.backgroun2}`}/>
 
                 <div className={s.label}>Калькулятор</div>

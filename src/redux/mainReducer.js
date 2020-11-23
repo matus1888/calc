@@ -16,7 +16,7 @@ const BTN_BACKSPACE='clickButtonBACKSPACE';
 let initialState= {
     currentValue: 0,
     bufferValue: 0,
-    logValue:undefined,
+    logValue:0,
     func: undefined,
     carriageReturn: true,
     commaSign: false
@@ -133,7 +133,7 @@ let mainReducer= (state=initialState, action) =>{
                 ...state,
                 currentValue: calc(state.bufferValue, state.currentValue, state.func),
                 bufferValue: 0,
-                logValue: 0,
+                logValue: state.logValue+ state.currentValue+"=",
                 func:undefined,
                 carriageReturn: true,
                 commaSign: !float(calc(state.bufferValue, state.currentValue, state.func))
@@ -194,11 +194,11 @@ let mainReducer= (state=initialState, action) =>{
 }
 
 export const addSymbolCreator=(symbol)=>({type: ADD_SYMBOL, symbol})
-export const actCrEQUALS=(currentValue)=>({type: BTN_EQUALS, currentValue})
-export const actCrMINUS=(currentValue)=>({type: BTN_MINUS, currentValue})
-export const actCrPLUS=(currentValue)=>({type: BTN_PLUS, currentValue})
-export const actCrMULT=(currentValue)=>({type: BTN_MULT, currentValue})
-export const actCrSHARE=(currentValue)=>({type: BTN_SHARE, currentValue})
+export const actCrEQUALS=()=>({type: BTN_EQUALS})
+export const actCrMINUS=()=>({type: BTN_MINUS})
+export const actCrPLUS=()=>({type: BTN_PLUS})
+export const actCrMULT=()=>({type: BTN_MULT})
+export const actCrSHARE=()=>({type: BTN_SHARE})
 export const actCrC=()=>({type: BTN_CLEAR})
 export const actCrCOMMA=()=>({type: BTN_COMMA})
 export const actCrSQUARE=()=>({type: BTN_SQUARE})

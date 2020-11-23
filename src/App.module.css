@@ -161,12 +161,15 @@ div button:active{
 	grid-row: 5/8;
 	border: none;
 	background: #f3f1f1;
+	text-align: right;
+	font-size:250% ;
 }
 .inputUP{
 	grid-column: 1/21;
 	grid-row: 4/5;
 	border: none;
 	background: #f3f1f1;
+	text-align: right;
 }
 .label{
 	grid-column: 1/7;
@@ -201,4 +204,13 @@ div button:active{
 }
 .backgroun3{
 background: #f6f5f5;
+}
+
+@font-face {
+
+font-family: "Segoe UI";
+
+src: url("./fonts/9404.ttf") format("truetype");
+	font-style: normal;
+	font-weight: normal;
 }
