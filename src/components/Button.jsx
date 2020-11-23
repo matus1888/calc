@@ -22,13 +22,13 @@ const Button = (props) => {
             props.clickCLEAR()
         }else if(props.name===','){
             props.clickCOMMA()
-        }else if(props.name==='x^2'){
+        }else if(props.id==='x^2'){
             props.clickSQUARE(props.cV)
-        }else if(props.name==='1/x'){
+        }else if(props.id==='1/x'){
             props.clickINVERSE(props.cV)
         }else if(props.name==='CE'){
             props.clickCE(props.cV)
-        }else if(props.name==='root(x)'){
+        }else if(props.id==='root(x)'){
             props.clickROOT(props.cV)
         }else if(props.id==='backspace'){
             props.clickBACKSPACE(props.cV)
@@ -37,8 +37,12 @@ const Button = (props) => {
             console.log("реализуй функцию для нажатия на эту кнопку"+props.name)
         }
     }
-    return (<button className={props.className} disabled={props.disabled}
-                    onClick={pressButton}>{props.name}
+    let img=props.img;
+    let getImg= ()=>{if(img){return(<img alt={''} src={img} height={'20px'}></img>)}}
+    return (<button className={props.className} disabled={props.disabled} title={props.title}
+                    onClick={pressButton}>
+        {getImg()}
+        {props.name}
     </button>)
 }
 export default Button;

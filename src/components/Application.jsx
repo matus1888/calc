@@ -3,6 +3,10 @@ import s from "../App.module.css";
 import ButtonC from "./ButtonC";
 import InputC from "./InputC";
 import Input2C from "./Input2C";
+import img from "../images/menu.gif"
+import imgSquare from "../images/square.gif"
+import imgInverse from "../images/revers.gif"
+import imgRoot from "../images/root.gif"
 
 class Application extends React.Component {
     constructor(props) {
@@ -35,6 +39,7 @@ class Application extends React.Component {
         }
     }
     componentDidMount() {
+        document.title="Калькулятор";
         document.addEventListener("keydown", this.keyFunction, false);
         // console.log(this.props)
     }
@@ -44,8 +49,12 @@ class Application extends React.Component {
     }
 
     render(){
-    return(<div className={s.grid}>
+    return(<div className={s.grid} >
             <div className={s.item}>
+                <div className={s.item2}></div>
+                <ButtonC className={`${s.btnMENU} ${s.backgroun2}`} img={img} title={'Открыть навигацию'}/>
+                <div className={s.divMODE}>Обычный</div>
+
                 <ButtonC className={s.btnPM} name="+/-"/>
                 <ButtonC className={s.btn0} name="0"/>
                 <ButtonC className={s.btnZPT} name=","/>
@@ -66,9 +75,9 @@ class Application extends React.Component {
                 <ButtonC className={s.btn9} name="9"/>
                 <ButtonC className={`${s.btnX} ${s.backgroun3}`} name="x"/>
 
-                <ButtonC className={`${s.btnONEX} ${s.backgroun3}`} name="1/x"/>
-                <ButtonC className={`${s.btnKVADRAT} ${s.backgroun3}`} name="x^2"/>
-                <ButtonC className={`${s.btnKOREN} ${s.backgroun3}`} name="root(x)"/>
+                <ButtonC className={`${s.btnONEX} ${s.backgroun3}`} img={imgInverse} id={'1/x'}/>
+                <ButtonC className={`${s.btnKVADRAT} ${s.backgroun3}`} img={imgSquare} id={'x^2'}/>
+                <ButtonC className={`${s.btnKOREN} ${s.backgroun3}`} img={imgRoot} id="root(x)"/>
                 <ButtonC className={`${s.btnDELEN} ${s.backgroun3}`} name='/'/>
 
                 <ButtonC className={`${s.btnPROC} ${s.backgroun3}`} name="%"/>
@@ -78,8 +87,8 @@ class Application extends React.Component {
 
                 <ButtonC className={`${s.btnMC} ${s.backgroun2}`} disabled name="MC"/>
                 <ButtonC className={`${s.btnMR} ${s.backgroun2}`} disabled name="MR"/>
-                <ButtonC className={`${s.btnMPLUS} ${s.backgroun2}`} name="M+"/>
-                <ButtonC className={`${s.btnMMINUS} ${s.backgroun2}`} name="M-"/>
+                <ButtonC className={`${s.btnMPLUS} ${s.backgroun2}`} name="M+" title={'Добавление памяти(CTRL+P)'}/>
+                <ButtonC className={`${s.btnMMINUS} ${s.backgroun2}`} name="M-" title={'Вычитание памяти(CTRL+Q)'}/>
                 <ButtonC className={`${s.btnM} ${s.backgroun2}`} disabled name="M"/>
 
                 <InputC className={`${s.input} ${s.backgroun2} `}/>
@@ -87,12 +96,13 @@ class Application extends React.Component {
 
                 <div className={s.label}>Калькулятор</div>
 
-                <ButtonC className={s.btnCLOSE} name="x"/>
-                <ButtonC className={s.btnRollUp} name="-"/>
-                <ButtonC className={s.btnSIDE} name="&#10720;"/>
+                <ButtonC className={`${s.btnCLOSE} ${s.backgroun2}`} name="x"/>
+                <ButtonC className={`${s.btnRollUp} ${s.backgroun2}`} name="-"/>
+                <ButtonC className={`${s.btnSIDE} ${s.backgroun2}`} name="&#10720;"/>
 
-                <ButtonC className={s.btnHIST} name="&#128337;"/>
+                <ButtonC className={s.btnHIST} name="&#128337;" title={'Журнал (CTRL+H)'}/>
 
+                <div className={s.item3}></div>
             </div>
         </div>)
 }
