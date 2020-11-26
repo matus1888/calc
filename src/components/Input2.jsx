@@ -1,5 +1,4 @@
 import React from 'react';
-import store from '../redux/store';
 
 const Input2= (props) =>{
     // console.log(store.getState().base)

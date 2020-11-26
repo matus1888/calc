@@ -7,6 +7,8 @@ import img from "../images/menu.gif"
 import imgSquare from "../images/square.gif"
 import imgInverse from "../images/revers.gif"
 import imgRoot from "../images/root.gif"
+import imgHist from '../images/history-black-36dp/2x/baseline_history_black_36dp.png'
+import SideMenu from "./sideMenu/SideMenu";
 
 class Application extends React.Component {
     constructor(props) {
@@ -52,8 +54,9 @@ class Application extends React.Component {
     return(<div className={s.grid} >
             <div className={s.item}>
                 <div className={s.item2}></div>
-                <ButtonC className={`${s.btnMENU} ${s.backgroun2}`} img={img} title={'Открыть навигацию'}/>
+                <ButtonC className={`${s.btnMENU} ${s.backgroun2}`} img={img} title={'Открыть навигацию'} id='menu'/>
                 <div className={s.divMODE}>Обычный</div>
+                {this.props.isActive&&<SideMenu />}
 
                 <ButtonC className={s.btnPM} name="+/-"/>
                 <ButtonC className={s.btn0} name="0"/>
@@ -68,12 +71,12 @@ class Application extends React.Component {
                 <ButtonC className={s.btn4} name="4"/>
                 <ButtonC className={s.btn5} name="5"/>
                 <ButtonC className={s.btn6} name="6"/>
-                <ButtonC className={`${s.btnMINUS} ${s.backgroun3}`} name="-"/>
+                <ButtonC className={`${s.btnMINUS} ${s.backgroun3}`} name="-" id='-'/>
 
                 <ButtonC className={s.btn7} name="7"/>
                 <ButtonC className={s.btn8} name="8"/>
                 <ButtonC className={s.btn9} name="9"/>
-                <ButtonC className={`${s.btnX} ${s.backgroun3}`} name="x"/>
+                <ButtonC className={`${s.btnX} ${s.backgroun3}`} name="x" id='x'/>
 
                 <ButtonC className={`${s.btnONEX} ${s.backgroun3}`} img={imgInverse} id={'1/x'}/>
                 <ButtonC className={`${s.btnKVADRAT} ${s.backgroun3}`} img={imgSquare} id={'x^2'}/>
@@ -95,12 +98,11 @@ class Application extends React.Component {
                 <Input2C className={`${s.inputUP} ${s.backgroun2}`}/>
 
                 <div className={s.label}>Калькулятор</div>
-
                 <ButtonC className={`${s.btnCLOSE} ${s.backgroun2}`} name="x"/>
                 <ButtonC className={`${s.btnRollUp} ${s.backgroun2}`} name="-"/>
                 <ButtonC className={`${s.btnSIDE} ${s.backgroun2}`} name="&#10720;"/>
 
-                <ButtonC className={s.btnHIST} name="&#128337;" title={'Журнал (CTRL+H)'}/>
+                <ButtonC className={s.btnHIST} img={imgHist} title={'Журнал (CTRL+H)'} />
 
                 <div className={s.item3}></div>
             </div>

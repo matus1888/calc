@@ -12,8 +12,9 @@ import {
 import {connect} from "react-redux";
 
 
-let mapStateToProps= (state)=>{
+let mapStateToProps=(state)=>{
     return {
+        isActive: state.menuI.activeMenu
     }
 }
 let mapDispatchToProps=(dispatch)=>{

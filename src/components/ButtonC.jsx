@@ -9,12 +9,13 @@ import {
     actCrINVERSE,
     actCrMINUS,
     actCrMULT,
-    actCrPLUS,
+    actCrPLUS, actCrPM,
     actCrROOT,
     actCrSHARE,
     actCrSQUARE,
     addSymbolCreator
 } from "../redux/mainReducer";
+import {actCrMenuActive} from "../redux/sideMenuReducer";
 
 
 let mapStateToProps = (state) => {
@@ -39,7 +40,9 @@ let mapDispatchToProps = (dispatch) => {
         clickINVERSE:(cV) =>dispatch(actCrINVERSE(cV)),
         clickCE:() =>dispatch(actCrCE()),
         clickROOT:() =>dispatch(actCrROOT()),
-        clickBACKSPACE:() =>dispatch(actCrBACKSPACE())
+        clickBACKSPACE:() =>dispatch(actCrBACKSPACE()),
+        clickMENU:()=>dispatch(actCrMenuActive()),
+        clickPM:()=>dispatch(actCrPM())
     }
 }
 

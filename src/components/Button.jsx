@@ -5,16 +5,16 @@ const Button = (props) => {
         let x=Number(props.name)
         let numbersButtons=(x===1)||(x===2)||(x===3)||(x===4)||
             (x===5)||(x===6)||(x===7)||(x===8)||(x===9)||(x===0);
-        console.log()
+        console.log('    '+props.id+'   props.id')
         if (numbersButtons){
             props.addSymbol(props.name)
         }else if(props.name==='='){
             props.clickEQUALS(props.cV)
-        }else if(props.name==='-'){
+        }else if(props.id==='-'){
             props.clickMINUS(props.cV)
         }else if(props.name==='+'){
             props.clickPLUS(props.cV)
-        }else if(props.name==='x'){
+        }else if(props.id==='x'){
             props.clickMULT(props.cV)
         }else if(props.name==='/'){
             props.clickSHARE(props.cV)
@@ -32,6 +32,10 @@ const Button = (props) => {
             props.clickROOT(props.cV)
         }else if(props.id==='backspace'){
             props.clickBACKSPACE(props.cV)
+        }else if(props.id==='menu'){
+            props.clickMENU()
+        }else if(props.name==='+/-'){
+            props.clickPM()
         }
         else{
             console.log("реализуй функцию для нажатия на эту кнопку"+props.name)

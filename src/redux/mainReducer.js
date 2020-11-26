@@ -11,6 +11,7 @@ const BTN_INVERSE='clickButtonINVERSE';
 const BTN_CE='clickButtonCE';
 const BTN_ROOT='clickButtonROOT';
 const BTN_BACKSPACE='clickButtonBACKSPACE';
+const BTN_PM='clickButtonPM';
 
 
 let initialState= {
@@ -176,6 +177,11 @@ let mainReducer= (state=initialState, action) =>{
         case BTN_CLEAR:{
             return initialState;
         }
+        case BTN_PM:{
+            return {
+                ...state, currentValue: -state.currentValue
+            }
+        }
         case BTN_CE:{
             return {
                 ...state, currentValue: 0
@@ -206,6 +212,7 @@ export const actCrINVERSE=()=>({type: BTN_INVERSE})
 export const actCrCE=()=>({type: BTN_CE})
 export const actCrROOT=()=>({type: BTN_ROOT})
 export const actCrBACKSPACE=()=>({type: BTN_BACKSPACE})
+export const actCrPM=()=>({type: BTN_PM})
 
 
 export default mainReducer;
