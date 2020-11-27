@@ -5,7 +5,7 @@ import {
     actCrC,
     actCrCE,
     actCrCOMMA,
-    actCrEQUALS,
+    actCrEQUALS, actCrHIST,
     actCrINVERSE,
     actCrMINUS,
     actCrMULT,
@@ -42,7 +42,8 @@ let mapDispatchToProps = (dispatch) => {
         clickROOT:() =>dispatch(actCrROOT()),
         clickBACKSPACE:() =>dispatch(actCrBACKSPACE()),
         clickMENU:()=>dispatch(actCrMenuActive()),
-        clickPM:()=>dispatch(actCrPM())
+        clickPM:()=>dispatch(actCrPM()),
+        clickHSIT:()=>dispatch(actCrHIST())
     }
 }
 

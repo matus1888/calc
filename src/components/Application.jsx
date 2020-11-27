@@ -10,6 +10,8 @@ import imgRoot from "../images/root.gif"
 import imgHist from '../images/history-black-36dp/2x/baseline_history_black_36dp.png'
 import SideMenu from "./sideMenu/SideMenu";
 import MemMenu from "./memMenu/MemMenu";
+import MemBuffC from "./memMenu/MemBuffC";
+import HistBuffC from "./historyBuffer/HistBuffC";
 
 class Application extends React.Component {
     constructor(props) {
@@ -58,6 +60,8 @@ class Application extends React.Component {
                 <ButtonC className={`${s.btnMENU} ${s.backgroun2}`} img={img} title={'Открыть навигацию'} id='menu'/>
                 <div className={s.divMODE}>Обычный</div>
                 {this.props.isActive&&<SideMenu />}
+                {this.props.isActiveMemMenu&&<MemBuffC />}
+                {this.props.isActiveHistoryMenu&&<HistBuffC />}
 
                 <ButtonC className={s.btnPM} name="+/-"/>
                 <ButtonC className={s.btn0} name="0"/>
@@ -89,7 +93,7 @@ class Application extends React.Component {
                 <ButtonC className={`${s.btnC} ${s.backgroun3}`} name="C"/>
                 <ButtonC className={`${s.btnBACK} ${s.backgroun3}`} name="&#10237;" id='backspace'/>
 
-                <MemMenu className={s.memMenu} />
+                <MemMenu className={s.memMenu} dis={this.props.isActiveMemMenu}/>
 
                 <InputC className={`${s.input} ${s.backgroun2} `}/>
                 <Input2C className={`${s.inputUP} ${s.backgroun2}`}/>
@@ -99,7 +103,7 @@ class Application extends React.Component {
                 <ButtonC className={`${s.btnRollUp} ${s.backgroun2}`} name="-"/>
                 <ButtonC className={`${s.btnSIDE} ${s.backgroun2}`} name="&#10720;"/>
 
-                <ButtonC className={s.btnHIST} img={imgHist} title={'Журнал (CTRL+H)'} />
+                <ButtonC className={s.btnHIST} img={imgHist} title={'Журнал (CTRL+H)'} id={'Hist'} />
 
                 <div className={s.item3}></div>
             </div>

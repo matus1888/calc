@@ -35,6 +35,8 @@ const Button = (props) => {
             props.clickMENU()
         }else if(props.name==='+/-'){
             props.clickPM()
+        }else if(props.id==='Hist'){
+            props.clickHSIT()
         }
         else{
             console.log("реализуй функцию для нажатия на эту кнопку"+props.name)

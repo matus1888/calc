@@ -1,0 +1,8 @@
+.buffer{
+    background: #A4A4A4;
+    font-weight: bold;
+    font-size: 300%;
+    grid-column: 1/21;
+    grid-row: 9/21;
+    z-index: 99991;
+}

@@ -9,6 +9,7 @@
             "foot";
     grid-template-rows: 10% 80% 10% ;
     position: static;
+    z-index: 9999;
 
 }
 .header{

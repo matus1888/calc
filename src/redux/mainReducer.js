@@ -12,6 +12,8 @@ const BTN_CE='clickButtonCE';
 const BTN_ROOT='clickButtonROOT';
 const BTN_BACKSPACE='clickButtonBACKSPACE';
 const BTN_PM='clickButtonPM';
+const SET_CURRENT_VALUE='setCv';
+const BTN_HIST='btnHistory';
 
 
 let initialState= {
@@ -20,7 +22,9 @@ let initialState= {
     logValue:0,
     func: undefined,
     carriageReturn: true,
-    commaSign: false
+    commaSign: false,
+    activeHistory: false,
+    historyValue: 0
 }
 let mainReducer= (state=initialState, action) =>{
     const float=(n)=>{
@@ -138,7 +142,8 @@ let mainReducer= (state=initialState, action) =>{
                 logValue: state.logValue+ state.currentValue+"=",
                 func:undefined,
                 carriageReturn: true,
-                commaSign: !float(calc(state.bufferValue, state.currentValue, state.func))
+                commaSign: !float(calc(state.bufferValue, state.currentValue, state.func)),
+                historyValue: calc(state.bufferValue, state.currentValue, state.func)
             };
 
         }
@@ -195,6 +200,15 @@ let mainReducer= (state=initialState, action) =>{
                 ...state, currentValue: state.currentValue + '.', commaSign: true
             };
         }
+        case SET_CURRENT_VALUE: {
+            return {
+                ...state, currentValue: action.value
+            }
+        }case BTN_HIST: {
+            return {
+                ...state, activeHistory: !state.activeHistory
+            }
+        }
         default :
             return state;
     }
@@ -214,6 +228,8 @@ export const actCrCE=()=>({type: BTN_CE})
 export const actCrROOT=()=>({type: BTN_ROOT})
 export const actCrBACKSPACE=()=>({type: BTN_BACKSPACE})
 export const actCrPM=()=>({type: BTN_PM})
+export const actCrSetCurrentValue=(value)=>({type:SET_CURRENT_VALUE, value})
+export const actCrHIST=()=>({type:BTN_HIST})
 
 
 export default mainReducer;
