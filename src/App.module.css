@@ -43,6 +43,8 @@ div button:active{
 	grid-column: 1/6;
 	grid-row: 19 / 21;
 }
+
+
 .btnMENU{
 	grid-column: 1/4;
 	grid-row: 2/ 4;
@@ -163,25 +165,9 @@ div button:active{
 	grid-row:  9/ 11;
 }
 /*шестой ряд снизу*/
-.btnMC{
-	grid-column: 1/5;
-	grid-row:  8/ 9;
-}
-.btnMR{
-	grid-column: 5/9;
-	grid-row:  8/ 9;
-}
-.btnMPLUS{
-	grid-column: 9/13;
-	grid-row:  8/ 9;
-}
-.btnMMINUS{
-	grid-column: 13/17;
-	grid-row:  8/ 9;
-}
-.btnM{
-	grid-column: 17/21;
-	grid-row:  8/ 9;
+.memMenu{
+    grid-column: 1/21;
+    grid-row: 8/9;
 }
 .input{
 	grid-column: 1/21;
@@ -234,10 +220,10 @@ div button:active{
 	background:  #F0EEF0;
 }
 .backgroun2{
-	background: #F0EEF0;
+	background: #f0eef0;
 }
 .backgroun3{
-background: #F7F7F7;
+background: #f7f7f7;
 }
 
 @font-face {

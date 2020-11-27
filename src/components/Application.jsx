@@ -9,6 +9,7 @@ import imgInverse from "../images/revers.gif"
 import imgRoot from "../images/root.gif"
 import imgHist from '../images/history-black-36dp/2x/baseline_history_black_36dp.png'
 import SideMenu from "./sideMenu/SideMenu";
+import MemMenu from "./memMenu/MemMenu";
 
 class Application extends React.Component {
     constructor(props) {
@@ -88,11 +89,7 @@ class Application extends React.Component {
                 <ButtonC className={`${s.btnC} ${s.backgroun3}`} name="C"/>
                 <ButtonC className={`${s.btnBACK} ${s.backgroun3}`} name="&#10237;" id='backspace'/>
 
-                <ButtonC className={`${s.btnMC} ${s.backgroun2}`} disabled name="MC"/>
-                <ButtonC className={`${s.btnMR} ${s.backgroun2}`} disabled name="MR"/>
-                <ButtonC className={`${s.btnMPLUS} ${s.backgroun2}`} name="M+" title={'Добавление памяти(CTRL+P)'}/>
-                <ButtonC className={`${s.btnMMINUS} ${s.backgroun2}`} name="M-" title={'Вычитание памяти(CTRL+Q)'}/>
-                <ButtonC className={`${s.btnM} ${s.backgroun2}`} disabled name="M"/>
+                <MemMenu className={s.memMenu} />
 
                 <InputC className={`${s.input} ${s.backgroun2} `}/>
                 <Input2C className={`${s.inputUP} ${s.backgroun2}`}/>

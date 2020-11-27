@@ -77,6 +77,7 @@ let mainReducer= (state=initialState, action) =>{
                 bufferValue: state.currentValue,
                 carriageReturn: true,
                 commaSign: !float(state.currentValue)
+                    //todo  сделай чтобы по нажатию на плюс писался журнал и сделай сам журнал
             }
             :{
                     ...state,

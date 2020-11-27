@@ -5,7 +5,6 @@ const Button = (props) => {
         let x=Number(props.name)
         let numbersButtons=(x===1)||(x===2)||(x===3)||(x===4)||
             (x===5)||(x===6)||(x===7)||(x===8)||(x===9)||(x===0);
-        console.log('    '+props.id+'   props.id')
         if (numbersButtons){
             props.addSymbol(props.name)
         }else if(props.name==='='){
