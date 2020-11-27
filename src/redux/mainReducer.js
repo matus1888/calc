@@ -153,36 +153,51 @@ let mainReducer= (state=initialState, action) =>{
 
         }
         case BTN_SQUARE: {
+            let newCV= calc(state.bufferValue, state.currentValue, "square")
+            let newLV="sqr(" + state.currentValue + ")"
+            let sqHist=state.historyValue
+            sqHist.push({valH:newCV,logValH:newLV})
             return {
                 ...state,
-                currentValue: calc(state.bufferValue, state.currentValue, "square"),
+                currentValue:newCV,
                 bufferValue: 0,
-                logValue: "sqr(" + state.currentValue + ")",
+                logValue: newLV,
                 func: undefined,
                 carriageReturn: true,
-                commaSign: !float(calc(state.bufferValue, state.currentValue, state.func))
+                commaSign: !float(calc(state.bufferValue, state.currentValue, state.func)),
+                historyValue: sqHist
             }
         }
         case BTN_ROOT: {
+            let newCV=calc(state.bufferValue, state.currentValue, "root")
+            let hist=state.historyValue;
+            let newLV="sqrt(" + state.currentValue + ")"
+            hist.push({valH:newCV,logValH:newLV})
             return {
                 ...state,
-                currentValue: calc(state.bufferValue, state.currentValue, "root"),
+                currentValue: newCV,
                 bufferValue: 0,
-                logValue: "sqrt(" + state.currentValue + ")",
+                logValue: newLV,
                 func: undefined,
                 carriageReturn: true,
-                commaSign: !float(calc(state.bufferValue, state.currentValue, state.func))
+                commaSign: !float(calc(state.bufferValue, state.currentValue, state.func)),
+                historyValue: hist
             }
         }
                 case BTN_INVERSE: {
+                    let newCV=calc(state.bufferValue, state.currentValue, "1/x");
+                    let newLV="1/"+state.currentValue
+                    let invHist=state.historyValue
+                    invHist.push({valH:newCV,logValH:newLV})
             return {
                     ...state,
-                    currentValue: calc(state.bufferValue, state.currentValue, "1/x"),
+                    currentValue: newCV,
                     bufferValue: 0,
-                    logValue: "1/"+state.currentValue,
+                    logValue: newLV,
                     func:undefined,
                     carriageReturn: true,
-                    commaSign: !float(calc(state.bufferValue, state.currentValue, state.func))
+                    commaSign: !float(calc(state.bufferValue, state.currentValue, state.func)),
+                    historyValue: invHist
                 }
         }
         case BTN_CLEAR:{
