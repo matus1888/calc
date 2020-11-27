@@ -24,7 +24,7 @@ let initialState= {
     carriageReturn: true,
     commaSign: false,
     activeHistory: false,
-    historyValue: 0
+    historyValue: []
 }
 let mainReducer= (state=initialState, action) =>{
     const float=(n)=>{
@@ -135,15 +135,20 @@ let mainReducer= (state=initialState, action) =>{
         }
 
         case BTN_EQUALS:{
+            let newLogVal=state.logValue+ state.currentValue+"=";
+            let newValue= calc(state.bufferValue, state.currentValue, state.func);
+            let newArrVal={valH:newValue,logValH:newLogVal};
+            let Hist=state.historyValue;
+            Hist.push(newArrVal);
             return {
                 ...state,
-                currentValue: calc(state.bufferValue, state.currentValue, state.func),
+                currentValue: newValue,
                 bufferValue: 0,
-                logValue: state.logValue+ state.currentValue+"=",
+                logValue: newLogVal,
                 func:undefined,
                 carriageReturn: true,
-                commaSign: !float(calc(state.bufferValue, state.currentValue, state.func)),
-                historyValue: calc(state.bufferValue, state.currentValue, state.func)
+                commaSign: !float(newValue),
+                historyValue: Hist
             };
 
         }
