@@ -13,15 +13,15 @@ const SideMenu=()=>{
     return(<div className={s.cl}>
             <div className={s.header}>header</div>
             <div className={s.body}>
-                <div className={s.d}><img className={s.img} alt='Калькулятор' scr={imgCalc}></img></div>
-                <button className={s.b}>Обычный</button>
-                <button className={s.b}><img alt='Инженерный' scr={imgIng}  /></button>
-                <button className={s.b}><img alt='Программист' scr={imgCode} /></button>
-                <button className={s.b}><img alt='Вычисление даты' scr={imgHist} /></button>
-                <div className={s.d}><img alt='Преобразователь' scr={imgWeb} /></div>
-                <button className={s.b}><img alt='Валюта' scr={imgMoney} /></button>
-                <button className={s.b}><img alt='Объем' scr={imgLine}></img></button>
-                <button className={s.b}>Длина</button>
+                <div className={s.d}>Калькулятор</div>
+                <button className={s.b}><img className={s.img} alt='Калькулятор' src={imgCalc}></img>Обычный</button>
+                <button className={s.b}><img className={s.img} alt='Инженерный' src={imgIng} />Инженерный</button>
+                <button className={s.b}><img className={s.img} alt='Программист' src={imgCode} />Программист</button>
+                <button className={s.b}><img className={s.img} alt='Вычисление даты' src={imgHist} />{'Вычисление Даты'}</button>
+                <div className={s.d}>Преобразователь</div>
+                <button className={s.b}><img className={s.img} alt='Валюта' src={imgMoney} />Валюта</button>
+                <button className={s.b}><img className={s.img} alt='Объем' src={imgLine}></img>Объем</button>
+                <button className={s.b}><img className={s.img} alt='Длина' src={imgWeb} />Длина</button>
                 <button className={s.b}>Вес и масса</button>
                 <button className={s.b}>Температура</button>
                 <button className={s.b}>Энергия</button>
