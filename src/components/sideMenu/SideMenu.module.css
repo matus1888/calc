@@ -1,21 +1,20 @@
 .cl{
-    margin-top: 15%;
-    background:  #F0EEF0;
+    margin-top: 5%;
     display: grid;
+    grid-column: auto;
+    grid-row: auto;
     grid-template-areas:
             "head"
             "body"
             "foot";
-    grid-template-rows: 15% 70% 15% ;
+    grid-template-rows: 10% 80% 10% ;
     width: 200px;
     transition: margin-left 100ms;
     margin-left: -200px;
-    grid-area: body;
     z-index: 5555 ;
 }
 .header{
     grid-area: head;
-    background:  #F0EEF0;
 }
 .body{
     height: 370px;
@@ -27,19 +26,16 @@
     overflow: auto;
 }
 /*scroll bar */
-.body::-webkit-scrollbar-track
-{
+.body::-webkit-scrollbar-track {
     -webkit-box-shadow: inset 0 0 1px rgba(0,0,0,0.3);
     border-radius: 2px;
     background-color: #F5F5F5;
 }
-.body::-webkit-scrollbar
-{
+.body::-webkit-scrollbar {
     width: 3px;
     background-color: #F5F5F5;
 }
-.body::-webkit-scrollbar-thumb
-{
+.body::-webkit-scrollbar-thumb {
     border-radius: 2px;
     -webkit-box-shadow: inset 0 0 1px rgba(114, 114, 114, 0.3);
     background-color: #d9d7d7;
@@ -79,16 +75,16 @@
     width:20px ;
 }
 .clActive{
-    margin-top: 15%;
     background:  #F0EEF0;
+    grid-row: auto;
+    grid-column: auto;
     display: grid;
     grid-template-areas:
             "head"
             "body"
             "foot";
-    grid-template-rows: 10% 80% 10% ;
+    grid-template-rows: 15% 70% 15% ;
     width: 200px;
-    grid-area: body;
     margin-left: 0px;
     position: static;
     z-index: 5555;

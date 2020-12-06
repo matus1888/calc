@@ -12,7 +12,8 @@
 	grid-area: field;
 	z-index: 7777;
 	background-color: white;
-}.item3{
+}
+.item3{
 	grid-area: field;
 }
 .item {
@@ -20,7 +21,6 @@
 	display: grid;
 	grid-template-columns: repeat(20, 1fr);
 	grid-template-rows: repeat(20, 1fr);
-	background: #F0EEF0;
 	box-shadow: 0 0 10px rgba(0,0,0,0.5); /* Параметры тени */
 	border: 1px solid #575656;
 	/*padding: 10px;*/
@@ -189,12 +189,12 @@ div button:active{
 	border: none;
 	background: #f3f1f1;
 	text-align: right;
+	color: #8e8c8c;
 	padding-right: 10px;
 }
 .label{
 	grid-column: 1/7;
 	grid-row: 1/2;
-	background: #f3f1f1;
 	font-size: 90%;
 	margin: auto;
 }
@@ -227,7 +227,6 @@ div button:active{
 	grid-column: 17/21 ;
 	grid-row: 2/4;
 	border: none;
-	background:  #F0EEF0;
 }
 .btnHIST:hover{
 	border: none;
@@ -238,20 +237,14 @@ div button:active{
 .backgroun3{
 background: #f7f7f7;
 }
-
+.backgroun4{
+	background: #c2c0c0
+}
 @font-face {
 
 font-family: "Segoe UI";
 
 src: url("./fonts/9404.ttf") format("truetype");
-	font-style: normal;
-	font-weight: normal;
-}
-.fontTest{
-
-	font-family: "MaterialIcons-Regular";
-
-	src: url("./fonts/MaterialIcons-Regular.ttf") format("truetype");
 	font-style: normal;
 	font-weight: normal;
 }

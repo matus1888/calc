@@ -54,11 +54,18 @@ class Application extends React.Component {
     }
 
     render(){
+        let bg=()=>{
+            if(this.props.isActiveMemMenu||this.props.isActiveHistoryMenu){
+                return s.backgroun4
+            }else {
+                return s.backgroun2
+            }
+        }
     return(<div className={s.grid} >
            <SideMenu isActive={this.props.isActive} />
             <div className={s.item2}> </div>
-            <div className={s.item}>
-                <ButtonC className={`${s.btnMENU} ${s.backgroun2}`} img={img} title={'Открыть навигацию'} id='menu'/>
+            <div className={`${s.item} ${bg()}`}>
+                <ButtonC className={`${s.btnMENU} ${bg()}`} img={img} title={'Открыть навигацию'} id='menu'/>
                 <div className={s.divMODE}>Обычный</div>
 
                 {this.props.isActiveMemMenu&&<MemBuffC />}
@@ -82,29 +89,29 @@ class Application extends React.Component {
                 <ButtonC className={s.btn7} name="7"/>
                 <ButtonC className={s.btn8} name="8"/>
                 <ButtonC className={s.btn9} name="9"/>
-                <ButtonC className={`${s.btnX} ${s.backgroun3}`} name="x" id='x'/>
+                <ButtonC className={`${s.btnX} ${s.background3}`} name="x" id='x'/>
 
-                <ButtonC className={`${s.btnONEX} ${s.backgroun3}`} img={imgInverse} id={'1/x'}/>
-                <ButtonC className={`${s.btnKVADRAT} ${s.backgroun3}`} img={imgSquare} id={'x^2'}/>
-                <ButtonC className={`${s.btnKOREN} ${s.backgroun3}`} img={imgRoot} id="root(x)"/>
-                <ButtonC className={`${s.btnDELEN} ${s.backgroun3}`} name='/'/>
+                <ButtonC className={`${s.btnONEX} ${s.background3}`} img={imgInverse} id={'1/x'}/>
+                <ButtonC className={`${s.btnKVADRAT} ${s.background3}`} img={imgSquare} id={'x^2'}/>
+                <ButtonC className={`${s.btnKOREN} ${s.background3}`} img={imgRoot} id="root(x)"/>
+                <ButtonC className={`${s.btnDELEN} ${s.background3}`} name='/'/>
 
-                <ButtonC className={`${s.btnPROC} ${s.backgroun3}`} name="%"/>
-                <ButtonC className={`${s.btnCE} ${s.backgroun3}`} name="CE"/>
-                <ButtonC className={`${s.btnC} ${s.backgroun3}`} name="C"/>
-                <ButtonC className={`${s.btnBACK} ${s.backgroun3}`} name="&#10237;" id='backspace'/>
+                <ButtonC className={`${s.btnPROC} ${s.background3}`} name="%"/>
+                <ButtonC className={`${s.btnCE} ${s.background3}`} name="CE"/>
+                <ButtonC className={`${s.btnC} ${s.background3}`} name="C"/>
+                <ButtonC className={`${s.btnBACK} ${s.background3}`} name="&#10237;" id='backspace'/>
 
-                <MemMenu className={s.memMenu} dis={this.props.isActiveMemMenu}/>
+                <MemMenu className={s.memMenu} dis={this.props.isActiveMemMenu} bg={bg()===s.backgroun2?true:false}/>
 
-                <InputC className={`${s.input} ${s.backgroun2} `}/>
-                <Input2C className={`${s.inputUP} ${s.backgroun2}`}/>
+                <InputC className={`${s.input} ${bg()} `}/>
+                <Input2C className={`${s.inputUP} ${bg()}`}/>
 
                 <div className={s.label}>Калькулятор</div>
-                <ButtonC className={`${s.btnCLOSE} ${s.backgroun2}`} name="x"/>
-                <ButtonC className={`${s.btnRollUp} ${s.backgroun2}`} name="-"/>
-                <ButtonC className={`${s.btnSIDE} ${s.backgroun2}`} name="&#10720;"/>
+                <ButtonC className={`${s.btnCLOSE} ${bg()}`} name="x"/>
+                <ButtonC className={`${s.btnRollUp} ${bg()}`} name="-"/>
+                <ButtonC className={`${s.btnSIDE} ${bg()}`} name="&#10720;"/>
 
-                <ButtonC className={s.btnHIST} img={imgHist} title={'Журнал (CTRL+H)'} id={'Hist'} />
+                <ButtonC className={`${s.btnHIST} ${bg()}`} img={imgHist} title={'Журнал (CTRL+H)'} id={'Hist'} />
 
                 <div className={s.item3}></div>
             </div>

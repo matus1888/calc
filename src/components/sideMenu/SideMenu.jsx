@@ -28,7 +28,7 @@ class SideMenu extends React.Component{
     render() {
         this.handleClick()
         return(<div ref={this.wrapperRef} className={s.cl}>
-                <div className={<s></s>.header}>header</div>
+
                 <div className={s.body}>
                     <div className={s.d}>Калькулятор</div>
                     <button className={s.b}><img className={s.img} alt='Калькулятор' src={imgCalc}></img>Обычный</button>
