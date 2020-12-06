@@ -9,9 +9,11 @@
 
 }
 .item2{
-	grid-area: fileld;
+	grid-area: field;
+	z-index: 7777;
+	background-color: white;
 }.item3{
-	grid-area: fileld;
+	grid-area: field;
 }
 .item {
 	margin-top: 5%;
@@ -49,7 +51,9 @@ div button:active{
 	grid-row: 2/ 4;
 	border: none;
 	z-index: 999999;
-
+}
+.btnMENU:hover {
+	border: none;
 }
 .divMODE{
 	grid-column: 4/10;
@@ -201,10 +205,14 @@ div button:active{
 }
 .btnCLOSE:hover{
 	background-color: #ff0000;
+	border: none;
 }
 .btnSIDE{
 	grid-column: 17/19;
 	grid-row:  1/2;
+	border: none;
+}
+.btnSIDE:hover {
 	border: none;
 }
 .btnRollUp{
@@ -212,11 +220,17 @@ div button:active{
 	grid-row:  1/2;
 	border: none;
 }
+.btnRollUp:hover{
+	border: none;
+}
 .btnHIST{
 	grid-column: 17/21 ;
 	grid-row: 2/4;
 	border: none;
 	background:  #F0EEF0;
+}
+.btnHIST:hover{
+	border: none;
 }
 .backgroun2{
 	background: #f0eef0;
@@ -230,6 +244,14 @@ background: #f7f7f7;
 font-family: "Segoe UI";
 
 src: url("./fonts/9404.ttf") format("truetype");
+	font-style: normal;
+	font-weight: normal;
+}
+.fontTest{
+
+	font-family: "MaterialIcons-Regular";
+
+	src: url("./fonts/MaterialIcons-Regular.ttf") format("truetype");
 	font-style: normal;
 	font-weight: normal;
 }

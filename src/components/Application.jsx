@@ -55,11 +55,12 @@ class Application extends React.Component {
 
     render(){
     return(<div className={s.grid} >
+           <SideMenu isActive={this.props.isActive} />
+            <div className={s.item2}> </div>
             <div className={s.item}>
-                <div className={s.item2}></div>
                 <ButtonC className={`${s.btnMENU} ${s.backgroun2}`} img={img} title={'Открыть навигацию'} id='menu'/>
                 <div className={s.divMODE}>Обычный</div>
-                {this.props.isActive&&<SideMenu />}
+
                 {this.props.isActiveMemMenu&&<MemBuffC />}
                 {this.props.isActiveHistoryMenu&&<HistBuffC />}
 

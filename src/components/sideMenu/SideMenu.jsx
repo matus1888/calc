@@ -9,33 +9,50 @@ import imgLine from '../../images/vertical_distribute-black-36dp/2x/baseline_ver
 import imgHist from '../../images/calculate-black-36dp/2x/baseline_calculate_black_36dp.png'
 
 
-const SideMenu=()=>{
-    return(<div className={s.cl}>
-            <div className={s.header}>header</div>
-            <div className={s.body}>
-                <div className={s.d}>Калькулятор</div>
-                <button className={s.b}><img className={s.img} alt='Калькулятор' src={imgCalc}></img>Обычный</button>
-                <button className={s.b}><img className={s.img} alt='Инженерный' src={imgIng} />Инженерный</button>
-                <button className={s.b}><img className={s.img} alt='Программист' src={imgCode} />Программист</button>
-                <button className={s.b}><img className={s.img} alt='Вычисление даты' src={imgHist} />{'Вычисление Даты'}</button>
-                <div className={s.d}>Преобразователь</div>
-                <button className={s.b}><img className={s.img} alt='Валюта' src={imgMoney} />Валюта</button>
-                <button className={s.b}><img className={s.img} alt='Объем' src={imgLine}></img>Объем</button>
-                <button className={s.b}><img className={s.img} alt='Длина' src={imgWeb} />Длина</button>
-                <button className={s.b}>Вес и масса</button>
-                <button className={s.b}>Температура</button>
-                <button className={s.b}>Энергия</button>
-                <button className={s.b}>Площадь</button>
-                <button className={s.b}>Скорость</button>
-                <button className={s.b}>Время</button>
-                <button className={s.b}>Мощность</button>
-                <button className={s.b}>Данные</button>
-                <button className={s.b}>Давление</button>
-                <button className={s.b}>Угол</button>
+class SideMenu extends React.Component{
+    constructor(props){
+        super(props);
+        this.wrapperRef = React.createRef();
+        this.handleClick = this.handleClick.bind(this);
+    }
+   handleClick() {
+        const wrapper=this.wrapperRef.current;
+       if(this.props.isActive){
+           wrapper.classList.add(s.clActive)
+       }else if (wrapper&&!this.props.isActive){
+           wrapper.classList.remove(s.clActive)
+       }
+    }
+    componentDidMount() {
+    }
+    render() {
+        this.handleClick()
+        return(<div ref={this.wrapperRef} className={s.cl}>
+                <div className={<s></s>.header}>header</div>
+                <div className={s.body}>
+                    <div className={s.d}>Калькулятор</div>
+                    <button className={s.b}><img className={s.img} alt='Калькулятор' src={imgCalc}></img>Обычный</button>
+                    <button className={s.b}><img className={s.img} alt='Инженерный' src={imgIng} />Инженерный</button>
+                    <button className={s.b}><img className={s.img} alt='Программист' src={imgCode} />Программист</button>
+                    <button className={s.b}><img className={s.img} alt='Вычисление даты' src={imgHist} />{'Вычисление Даты'}</button>
+                    <div className={s.d}>Преобразователь</div>
+                    <button className={s.b}><img className={s.img} alt='Валюта' src={imgMoney} />Валюта</button>
+                    <button className={s.b}><img className={s.img} alt='Объем' src={imgLine}></img>Объем</button>
+                    <button className={s.b}><img className={s.img} alt='Длина' src={imgWeb} />Длина</button>
+                    <button className={s.b}><img className={s.img} alt='Длина' src={imgWeb} />Вес и масса</button>
+                    <button className={s.b}><img className={s.img} alt='Длина' src={imgWeb} />Температура</button>
+                    <button className={s.b}><img className={s.img} alt='Длина' src={imgWeb} />Энергия</button>
+                    <button className={s.b}><img className={s.img} alt='Длина' src={imgWeb} />Площадь</button>
+                    <button className={s.b}><img className={s.img} alt='Длина' src={imgWeb} />Скорость</button>
+                    <button className={s.b}><img className={s.img} alt='Длина' src={imgWeb} />Время</button>
+                    <button className={s.b}><img className={s.img} alt='Длина' src={imgWeb} />Мощность</button>
+                    <button className={s.b}><img className={s.img} alt='Длина' src={imgWeb} />Данные</button>
+                    <button className={s.b}><img className={s.img} alt='Длина' src={imgWeb} />Давление</button>
+                    <button className={s.b}><img className={s.img} alt='Длина' src={imgWeb} />Угол</button>
+                </div>
+                <button className={s.footer}>О программе</button>
             </div>
-            <button className={s.footer}>О программе</button>
-        </div>
-    )
-}
-
+        )
+    }
+    }
 export default SideMenu;
