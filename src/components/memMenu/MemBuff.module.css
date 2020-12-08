@@ -1,8 +1,23 @@
 .buffer{
-    background: #f0eef0;
-    font-weight: bold;
-    font-size: 300%;
+    background: #d9dadb;
     grid-column: 1/21;
     grid-row: 9/21;
-    z-index: 99991;
+    opacity: 0%;
+    text-align: right;
+    font-weight: bold;
+    overflow: auto;
+    transition: all  500ms;
+    font-size:160% ;
+    z-index: -1;
+}
+.bufferActive{
+    background: #d8d9da;
+    grid-column: 1/21;
+    grid-row: 9/21;
+    text-align: right;
+    z-index: 10;
+    overflow: auto;
+    opacity: 100%;
+    font-weight: bold;
+    font-size:160% ;
 }

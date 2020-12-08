@@ -68,8 +68,8 @@ class Application extends React.Component {
                 <ButtonC className={`${s.btnMENU} ${bg()}`} img={img} title={'Открыть навигацию'} id='menu'/>
                 <div className={s.divMODE}>Обычный</div>
 
-                {this.props.isActiveMemMenu&&<MemBuffC />}
-                {this.props.isActiveHistoryMenu&&<HistBuffC />}
+                <MemBuffC  isActive={this.props.isActiveMemMenu}/>
+                <HistBuffC isActive={this.props.isActiveHistoryMenu}/>
 
                 <ButtonC className={s.btnPM} name="+/-"/>
                 <ButtonC className={s.btn0} name="0"/>
