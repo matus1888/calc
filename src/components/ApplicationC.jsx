@@ -16,7 +16,7 @@ let mapStateToProps=(state)=>{
     return {
         isActive: state.menuI.activeMenu,
         isActiveMemMenu: state.memMenu.activeMemBuffer,
-        isActiveHistoryMenu: state.base.activeHistory
+        isActiveHistoryMenu: state.mainReducer.activeHistory
     }
 }
 let mapDispatchToProps=(dispatch)=>{

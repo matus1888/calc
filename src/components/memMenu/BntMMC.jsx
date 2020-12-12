@@ -14,7 +14,7 @@ let mapStateToProps=(state)=>{
     return {
         mMenuIsNOTActive : state.memMenu.mMenuIsNOTActive,
         mCell : state.memMenu.mCell,
-        cV: state.base.currentValue
+        cV: state.mainReducer.currentValue
     }
 }
 let mapDispatchToProps=(dispatch)=>{

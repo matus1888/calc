@@ -3,7 +3,7 @@ import {connect} from "react-redux";
 
 let mapStateToProps=(state)=>{
     return {
-        historyValue: state.base.historyValue
+        historyValue: state.mainReducer.historyValue
     }
 }
 

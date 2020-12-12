@@ -4,7 +4,7 @@ import sideMenuReducer from "./sideMenuReducer";
 import memMenuReducer from "./memMenuReducer";
 
 let reducers=combineReducers({
-    base: mainReducer,
+    mainReducer: mainReducer,
     menuI: sideMenuReducer,
     memMenu: memMenuReducer
 })

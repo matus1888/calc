@@ -26,7 +26,7 @@ class HistBuff extends React.Component {
         let values=this.values()
         this.handleClick()
         return (<div ref={this.wrapperRef} className={s.buffer}>
-                {values}
+                {this.props.historyValue[0]?values:'Журнала еще нет'}
             </div>
         )
     }

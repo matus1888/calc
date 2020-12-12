@@ -12,6 +12,8 @@ import SideMenu from "./sideMenu/SideMenu";
 import MemMenu from "./memMenu/MemMenu";
 import MemBuffC from "./memMenu/MemBuffC";
 import HistBuffC from "./historyBuffer/HistBuffC";
+import CurtainContainer from "./CurtainContainer";
+import CurtainAllContainer from "./CurtainAllContainer";
 
 class Application extends React.Component {
     constructor(props) {
@@ -70,7 +72,8 @@ class Application extends React.Component {
 
                 <MemBuffC  isActive={this.props.isActiveMemMenu}/>
                 <HistBuffC isActive={this.props.isActiveHistoryMenu}/>
-
+                <CurtainContainer className={s.curtain} isActive={this.props.isActiveMemMenu||this.props.isActiveHistoryMenu} />
+                <CurtainAllContainer />
                 <ButtonC className={s.btnPM} name="+/-"/>
                 <ButtonC className={s.btn0} name="0"/>
                 <ButtonC className={s.btnZPT} name=","/>
@@ -89,19 +92,19 @@ class Application extends React.Component {
                 <ButtonC className={s.btn7} name="7"/>
                 <ButtonC className={s.btn8} name="8"/>
                 <ButtonC className={s.btn9} name="9"/>
-                <ButtonC className={`${s.btnX} ${s.background3}`} name="x" id='x'/>
+                <ButtonC className={`${s.btnX} ${s.backgroun3}`} name="x" id='x'/>
 
-                <ButtonC className={`${s.btnONEX} ${s.background3}`} img={imgInverse} id={'1/x'}/>
-                <ButtonC className={`${s.btnKVADRAT} ${s.background3}`} img={imgSquare} id={'x^2'}/>
-                <ButtonC className={`${s.btnKOREN} ${s.background3}`} img={imgRoot} id="root(x)"/>
-                <ButtonC className={`${s.btnDELEN} ${s.background3}`} name='/'/>
+                <ButtonC className={`${s.btnONEX} ${s.backgroun3}`} img={imgInverse} id={'1/x'}/>
+                <ButtonC className={`${s.btnKVADRAT} ${s.backgroun3}`} img={imgSquare} id={'x^2'}/>
+                <ButtonC className={`${s.btnKOREN} ${s.backgroun3}`} img={imgRoot} id="root(x)"/>
+                <ButtonC className={`${s.btnDELEN} ${s.backgroun3}`} name='/'/>
 
-                <ButtonC className={`${s.btnPROC} ${s.background3}`} name="%"/>
-                <ButtonC className={`${s.btnCE} ${s.background3}`} name="CE"/>
-                <ButtonC className={`${s.btnC} ${s.background3}`} name="C"/>
-                <ButtonC className={`${s.btnBACK} ${s.background3}`} name="&#10237;" id='backspace'/>
+                <ButtonC className={`${s.btnPROC} ${s.backgroun3}`} name="%"/>
+                <ButtonC className={`${s.btnCE} ${s.backgroun3}`} name="CE"/>
+                <ButtonC className={`${s.btnC} ${s.backgroun3}`} name="C"/>
+                <ButtonC className={`${s.btnBACK} ${s.backgroun3}`} name="&#10237;" id='backspace'/>
 
-                <MemMenu className={s.memMenu} dis={this.props.isActiveMemMenu} bg={bg()===s.backgroun2?true:false}/>
+                <MemMenu className={s.memMenu} dis={this.props.isActiveMemMenu||this.props.isActiveHistoryMenu} bg={bg()===s.backgroun2?true:false}/>
 
                 <InputC className={`${s.input} ${bg()} `}/>
                 <Input2C className={`${s.inputUP} ${bg()}`}/>

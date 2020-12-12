@@ -3,7 +3,7 @@ import {connect} from "react-redux";
 
 let mapStateToProps=(state)=>{
     return{
-        state: state.base
+        state: state.mainReducer
     }
 }
 

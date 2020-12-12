@@ -21,7 +21,7 @@ import {actCrMenuActive} from "../redux/sideMenuReducer";
 let mapStateToProps = (state) => {
     return {
         currentValue: state.currentValue,
-        cV: state.base.currentValue
+        cV: state.mainReducer.currentValue
     }
 }
 
