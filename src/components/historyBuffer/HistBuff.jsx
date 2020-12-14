@@ -7,6 +7,13 @@ class HistBuff extends React.Component {
         this.wrapperRef = React.createRef();
         this.handleClick = this.handleClick.bind(this);
     }
+    // this is new REACT method for("Снимок перед обновлением")
+    getSnapshotBeforeUpdate(prevProps, prevState) {
+        localStorage.setItem('historyOfCalc',JSON.stringify(this.props.historyValue) )
+        return null;
+    }
+
+    //this method get all values of History
     values(){return this.props.historyValue.map(value =>
         <div key={(value.logValH + new Date().toLocaleString()).toString()}>
             <div className={s.logVal}>{value.logValH}</div>
@@ -29,6 +36,8 @@ class HistBuff extends React.Component {
                 {this.props.historyValue[0]?values:'Журнала еще нет'}
             </div>
         )
+    }
+    componentDidUpdate(prevProps, prevState, snapshot) {
     }
 }
 

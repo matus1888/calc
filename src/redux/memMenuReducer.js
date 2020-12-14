@@ -6,8 +6,8 @@ const M_SAVE='memorySave';
 const M_SHOW='memoryShow';
 
 let initialState= {
-    mMenuIsNOTActive : true,
-    mCell : 0,
+    mMenuIsNOTActive : localStorage.getItem('memBufferHistory')?false:true,
+    mCell : localStorage.getItem('memBufferHistory')?JSON.parse(localStorage.getItem('memBufferHistory')):0,
     activeMemBuffer: false
 }
 let memMenuReducer = (state=initialState, action) =>{

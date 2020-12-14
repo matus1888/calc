@@ -24,7 +24,7 @@ let initialState= {
     carriageReturn: true,
     commaSign: false,
     activeHistory: false,
-    historyValue: []
+    historyValue: localStorage.getItem('historyOfCalc')?JSON.parse(localStorage.getItem('historyOfCalc')):[]
 }
 let mainReducer= (state=initialState, action) =>{
     const float=(n)=>{
