@@ -16,18 +16,16 @@ class MemBuffer extends React.Component{
             wrapper.classList.remove(s.bufferActive)
         }
     }
-    getSnapshotBeforeUpdate(prevProps, prevState) {
+    componentDidUpdate(prevProps, prevState) {
         localStorage.setItem('memBufferHistory',JSON.stringify(this.props.mCell))
-        return null;
     }
 
     render() {
         this.handleClick()
         return (
-            <div ref={this.wrapperRef} className={s.buffer}>{this.props.mCell}</div>
+            <div ref={this.wrapperRef} className={s.buffer}>{this.props.mCell}
+            </div>
         )
-    }
-    componentDidUpdate(prevProps, prevState, snapshot) {
     }
 
 }
