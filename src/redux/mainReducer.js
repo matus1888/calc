@@ -1,4 +1,4 @@
-const ADD_SYMBOL='addSymbol';
+    const ADD_SYMBOL='addSymbol';
 const BTN_EQUALS ='clickButtonEQUALS';
 const BTN_MINUS ='clickButtonMINUS';
 const BTN_PLUS='clickButtonPLUS';

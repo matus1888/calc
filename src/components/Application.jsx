@@ -104,7 +104,7 @@ class Application extends React.Component {
                 <ButtonC className={`${s.btnC} ${s.backgroun3}`} name="C"/>
                 <ButtonC className={`${s.btnBACK} ${s.backgroun3}`} name="&#10237;" id='backspace'/>
 
-                <MemMenu className={s.memMenu} dis={this.props.isActiveMemMenu||this.props.isActiveHistoryMenu} bg={bg()===s.backgroun2?true:false}/>
+                <MemMenu className={s.memMenu} dis={this.props.isActiveMemMenu||this.props.isActiveHistoryMenu} bg={bg()===s.backgroun2?true:false} init={{size:"XXL"}} />
 
                 <InputC className={`${s.input} ${bg()} `}/>
                 <Input2C className={`${s.inputUP} ${bg()}`}/>
