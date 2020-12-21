@@ -16,7 +16,8 @@ let mapStateToProps=(state)=>{
     return {
         isActive: state.menuI.activeMenu,
         isActiveMemMenu: state.memMenu.activeMemBuffer,
-        isActiveHistoryMenu: state.mainReducer.activeHistory
+        isActiveHistoryMenu: state.mainReducer.activeHistory,
+        sizeOfMyCalc: state.mainReducer.sizeOfWindow
     }
 }
 let mapDispatchToProps=(dispatch)=>{

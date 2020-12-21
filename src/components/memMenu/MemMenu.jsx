@@ -4,20 +4,24 @@ import BntMMC from "./BntMMC";
 import s from '../../App.module.css'
 
 const MemMenu=(props)=>{
-    let initialState={size:"XL"};
+    let initialSize= window.innerWidth >= 916 ? "XXL" : "XL";
+
+    let initialState={size:initialSize};
     const [state,setState]=useState(initialState)
 
     useEffect(()=>{
         function func() {
-            if (document.documentElement.clientWidth > 916) {
+            if (window.innerWidth >= 916) {
                 setState({...state, size: "XXL"})
-                console.log(state.size)
+                // console.log(state.size)
             }else{setState({...state, size:"XL"})
-                console.log(state.size)}
+                // console.log(state.size)
+                 }
 
 
         }
         window.addEventListener('resize', func);
+        props.resizeMyCalc();
         // Указываем, как сбросить этот эффект:
         return function() {
             window.removeEventListener('resize', func)

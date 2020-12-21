@@ -1,0 +1,103 @@
+.XXLVBlock {
+    grid-column: 21/span 1;
+    grid-row: 1/span 21;
+    display: grid;
+    grid-template-areas: "a" "b" "bb" "c" "d";
+    grid-template-rows: 8% 8% 1% 78% 5%;
+    padding-left: 10px;
+
+}
+
+.history {
+    font-weight: bold;
+    padding-left: 10px;
+    vertical-align: middle;
+}
+
+.memory {
+    font-weight: bold;
+    padding-left: 20px;
+    vertical-align: middle;
+}
+
+.a {
+    grid-area: a;
+    text-align: right;
+}
+.a button{
+    background: #f0eef0;
+}
+
+.b {
+    grid-area: b;
+}
+
+.c {
+    grid-area: c;
+    font-weight: bold;
+    font-size:160% ;
+    overflow: auto;
+}
+
+.d {
+    grid-area: d;
+    z-index: -1;
+}
+.bb{
+    grid-area: bb;
+}
+
+.side {
+    border: none;
+}
+
+.side:hover {
+    border: none;
+}
+
+.fullScreen {
+    border: none;
+}
+
+.fullScreen:hover {
+    border: none;
+}
+
+.close {
+    border: none;
+}
+
+.close:hover {
+    background-color: red;
+    border: none;
+}
+.c::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 1px rgba(0,0,0,0.3);
+    border-radius: 2px;
+    background-color: #cbcbcb;
+}
+.c::-webkit-scrollbar {
+    width: 3px;
+    background-color: #dcdcdc;
+}
+.c::-webkit-scrollbar-thumb {
+    border-radius: 2px;
+    -webkit-box-shadow: inset 0 0 1px rgba(114, 114, 114, 0.3);
+    background-color: #787777;
+}
+.logVal{
+    padding-top: 20px;
+    font-size: 50%;
+}
+.line{
+    height: 3px;
+    width: 50px;
+    background-color: #2a3db3;
+    margin-left: 10px ;
+}
+.line2{
+    height: 3px;
+    width: 50px;
+    background-color: #2a3db3;
+    margin-left: 95px;
+}

@@ -1,4 +1,4 @@
-    const ADD_SYMBOL='addSymbol';
+const ADD_SYMBOL='addSymbol';
 const BTN_EQUALS ='clickButtonEQUALS';
 const BTN_MINUS ='clickButtonMINUS';
 const BTN_PLUS='clickButtonPLUS';
@@ -14,6 +14,8 @@ const BTN_BACKSPACE='clickButtonBACKSPACE';
 const BTN_PM='clickButtonPM';
 const SET_CURRENT_VALUE='setCv';
 const BTN_HIST='btnHistory';
+const RESIZE_WINDOW='resizeWindow';
+const SET_HIST_OR_MEM='historyOrMem';
 
 
 let initialState= {
@@ -24,7 +26,9 @@ let initialState= {
     carriageReturn: true,
     commaSign: false,
     activeHistory: false,
-    historyValue: localStorage.getItem('historyOfCalc')?JSON.parse(localStorage.getItem('historyOfCalc')):[]
+    historyValue: localStorage.getItem('historyOfCalc')?JSON.parse(localStorage.getItem('historyOfCalc')):[],
+    sizeOfWindow: window.innerWidth >= 916 ? "XXL" : "XL",
+    histOrMem: true
 }
 let mainReducer= (state=initialState, action) =>{
     const float=(n)=>{
@@ -228,6 +232,14 @@ let mainReducer= (state=initialState, action) =>{
             return {
                 ...state, activeHistory: !state.activeHistory
             }
+        }case RESIZE_WINDOW: {
+            return {
+                ...state, sizeOfWindow: window.innerWidth >= 916 ? "XXL" : "XL"
+            }
+        }case SET_HIST_OR_MEM: {
+             return {
+                 ...state, histOrMem: !state.histOrMem
+             }
         }
         default :
             return state;
@@ -250,6 +262,9 @@ export const actCrBACKSPACE=()=>({type: BTN_BACKSPACE})
 export const actCrPM=()=>({type: BTN_PM})
 export const actCrSetCurrentValue=(value)=>({type:SET_CURRENT_VALUE, value})
 export const actCrHIST=()=>({type:BTN_HIST})
+export const actCrResize=()=>({type:RESIZE_WINDOW})
+export const actCrHistOrMem=()=>({type:SET_HIST_OR_MEM})
+
 
 
 export default mainReducer;

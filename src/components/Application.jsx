@@ -9,11 +9,13 @@ import imgInverse from "../images/revers.gif"
 import imgRoot from "../images/root.gif"
 import imgHist from '../images/history-black-36dp/2x/baseline_history_black_36dp.png'
 import SideMenu from "./sideMenu/SideMenu";
-import MemMenu from "./memMenu/MemMenu";
 import MemBuffC from "./memMenu/MemBuffC";
 import HistBuffC from "./historyBuffer/HistBuffC";
 import CurtainContainer from "./CurtainContainer";
 import CurtainAllContainer from "./CurtainAllContainer";
+import MemMenuConatienr from "./memMenu/MemMenuConatienr";
+import XXLBlock from "./XXBlock/XXLBlock";
+import XXLBlockContainer from "./XXBlock/XXLBlockContainer";
 
 class Application extends React.Component {
     constructor(props) {
@@ -104,18 +106,18 @@ class Application extends React.Component {
                 <ButtonC className={`${s.btnC} ${s.backgroun3}`} name="C"/>
                 <ButtonC className={`${s.btnBACK} ${s.backgroun3}`} name="&#10237;" id='backspace'/>
 
-                <MemMenu className={s.memMenu} dis={this.props.isActiveMemMenu||this.props.isActiveHistoryMenu} bg={bg()===s.backgroun2?true:false} init={{size:"XXL"}} />
+                <MemMenuConatienr className={s.memMenu} dis={this.props.isActiveMemMenu||this.props.isActiveHistoryMenu} bg={bg()===s.backgroun2?true:false} init={{size:"XXL"}} />
 
                 <InputC className={`${s.input} ${bg()} `}/>
                 <Input2C className={`${s.inputUP} ${bg()}`}/>
 
                 <div className={s.label}>Калькулятор</div>
-                <ButtonC className={`${s.btnCLOSE} ${bg()}`} name="x"/>
-                <ButtonC className={`${s.btnRollUp} ${bg()}`} name="-"/>
-                <ButtonC className={`${s.btnSIDE} ${bg()}`} name="&#10720;"/>
+                {this.props.sizeOfMyCalc==="XL"&&<ButtonC className={`${s.btnCLOSE} ${bg()}`} name="x"/>}
+                {this.props.sizeOfMyCalc==="XL"&&<ButtonC className={`${s.btnRollUp} ${bg()}`} name="-"/>}
+                {this.props.sizeOfMyCalc==="XL"&&<ButtonC className={`${s.btnSIDE} ${bg()}`} name="&#10720;"/>}
 
-                <ButtonC className={`${s.btnHIST} ${bg()}`} img={imgHist} title={'Журнал (CTRL+H)'} id={'Hist'} />
-
+                {this.props.sizeOfMyCalc==="XL"&&<ButtonC className={`${s.btnHIST} ${bg()}`} img={imgHist} title={'Журнал (CTRL+H)'} id={'Hist'}/>}
+                {this.props.sizeOfMyCalc==="XXL"&&<XXLBlockContainer />}
                 <div className={s.item3}></div>
             </div>
         </div>)
