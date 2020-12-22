@@ -1,6 +1,6 @@
 import XXLBlock from "./XXLBlock";
 import {connect} from "react-redux";
-import {actCrHistOrMem} from "../../redux/mainReducer";
+import {actCrClearHistory, actCrHistOrMem} from "../../redux/mainReducer";
 
 let mapStateToProps=(state)=>{
     return {
@@ -12,7 +12,8 @@ let mapStateToProps=(state)=>{
 
 let mapDispatchToProps=(dispatch)=>{
     return {
-        switchMenu: ()=>dispatch(actCrHistOrMem())
+        switchMenu: ()=>dispatch(actCrHistOrMem()),
+        clearHistory:()=>dispatch(actCrClearHistory())
     }
 }
 

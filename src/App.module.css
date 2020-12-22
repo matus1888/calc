@@ -263,6 +263,12 @@ src: url("./fonts/9404.ttf") format("truetype");
 	font-style: normal;
 	font-weight: normal;
 }
+@font-face {
+	font-family: "Material";
+	src: url('./fonts/MaterialIcons-Regular.ttf') format('truetype');
+	font-style: normal;
+	font-weight: normal;
+}
 .curtain{
 	background: black;
 	grid-row: 1/span 8;
@@ -288,4 +294,8 @@ src: url("./fonts/9404.ttf") format("truetype");
 	grid-row: 1/span 20;
 	grid-column: 1/span 20;
 	z-index: 1;
+}
+
+.fontMater{
+	font-family: Material;
 }

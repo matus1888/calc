@@ -24,7 +24,8 @@
     grid-area: a;
     text-align: right;
 }
-.a button{
+
+.a button {
     background: #f0eef0;
 }
 
@@ -35,69 +36,95 @@
 .c {
     grid-area: c;
     font-weight: bold;
-    font-size:160% ;
+    font-size: 160%;
     overflow: auto;
 }
 
 .d {
     grid-area: d;
-    z-index: -1;
+    text-align: right;
 }
-.bb{
+
+.bb {
     grid-area: bb;
 }
 
 .side {
     border: none;
+    font-family: Material;
 }
 
 .side:hover {
     border: none;
+    font-family: Material;
 }
 
 .fullScreen {
     border: none;
+    font-family: Material;
 }
 
 .fullScreen:hover {
     border: none;
+    font-family: Material;
 }
 
 .close {
     border: none;
+    font-family: Material;
 }
 
 .close:hover {
     background-color: red;
+    font-family: Material;
     border: none;
 }
+
 .c::-webkit-scrollbar-track {
-    -webkit-box-shadow: inset 0 0 1px rgba(0,0,0,0.3);
+    -webkit-box-shadow: inset 0 0 1px rgba(0, 0, 0, 0.3);
     border-radius: 2px;
     background-color: #cbcbcb;
 }
+
 .c::-webkit-scrollbar {
     width: 3px;
+    height: 3px;
     background-color: #dcdcdc;
 }
+
 .c::-webkit-scrollbar-thumb {
     border-radius: 2px;
     -webkit-box-shadow: inset 0 0 1px rgba(114, 114, 114, 0.3);
     background-color: #787777;
 }
-.logVal{
+
+.logVal {
     padding-top: 20px;
     font-size: 50%;
 }
-.line{
+
+.line {
     height: 3px;
     width: 50px;
     background-color: #2a3db3;
-    margin-left: 10px ;
+    margin-left: 10px;
 }
-.line2{
+
+.line2 {
     height: 3px;
     width: 50px;
     background-color: #2a3db3;
     margin-left: 95px;
+}
+
+.buttonDelete {
+    font-family: Material;
+    background: #f0eef0;
+    border: none;
+
+}
+
+.buttonDelete:hover {
+    font-family: Material;
+    border: none;
 }

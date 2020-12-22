@@ -14,7 +14,6 @@ import HistBuffC from "./historyBuffer/HistBuffC";
 import CurtainContainer from "./CurtainContainer";
 import CurtainAllContainer from "./CurtainAllContainer";
 import MemMenuConatienr from "./memMenu/MemMenuConatienr";
-import XXLBlock from "./XXBlock/XXLBlock";
 import XXLBlockContainer from "./XXBlock/XXLBlockContainer";
 
 class Application extends React.Component {
@@ -69,52 +68,52 @@ class Application extends React.Component {
            <SideMenu isActive={this.props.isActive} />
             <div className={s.item2}> </div>
             <div className={`${s.item} ${bg()}`}>
-                <ButtonC className={`${s.btnMENU} ${bg()}`} img={img} title={'Открыть навигацию'} id='menu'/>
-                <div className={s.divMODE}>Обычный</div>
+                   <ButtonC className={`${s.btnMENU} ${bg()}`} img={img} title={'Открыть навигацию'} id='menu'/>
+                   <div className={s.divMODE}>Обычный</div>
 
-                <MemBuffC  isActive={this.props.isActiveMemMenu}/>
-                <HistBuffC isActive={this.props.isActiveHistoryMenu}/>
-                <CurtainContainer className={s.curtain} isActive={this.props.isActiveMemMenu||this.props.isActiveHistoryMenu} />
-                <CurtainAllContainer />
-                <ButtonC className={s.btnPM} name="+/-"/>
-                <ButtonC className={s.btn0} name="0"/>
-                <ButtonC className={s.btnZPT} name=","/>
-                <ButtonC className={s.btnRAVNO} name="="/>
+                   <MemBuffC  isActive={this.props.isActiveMemMenu}/>
+                   <HistBuffC isActive={this.props.isActiveHistoryMenu}/>
+                   <CurtainContainer className={s.curtain} isActive={this.props.isActiveMemMenu||this.props.isActiveHistoryMenu} />
+                   <CurtainAllContainer />
+                   <ButtonC className={s.btnPM} name="+/-"/>
+                   <ButtonC className={s.btn0} name="0"/>
+                   <ButtonC className={s.btnZPT} name=","/>
+                   <ButtonC className={s.btnRAVNO} name="="/>
 
-                <ButtonC className={s.btn1} name="1"/>
-                <ButtonC className={s.btn2} name="2"/>
-                <ButtonC className={s.btn3} name="3"/>
-                <ButtonC className={`${s.btnPLUS} ${s.backgroun3}`} name="+"/>
+                   <ButtonC className={s.btn1} name="1"/>
+                   <ButtonC className={s.btn2} name="2"/>
+                   <ButtonC className={s.btn3} name="3"/>
+                   <ButtonC className={`${s.btnPLUS} ${s.backgroun3}`} name="+"/>
 
-                <ButtonC className={s.btn4} name="4"/>
-                <ButtonC className={s.btn5} name="5"/>
-                <ButtonC className={s.btn6} name="6"/>
-                <ButtonC className={`${s.btnMINUS} ${s.backgroun3}`} name="-" id='-'/>
+                   <ButtonC className={s.btn4} name="4"/>
+                   <ButtonC className={s.btn5} name="5"/>
+                   <ButtonC className={s.btn6} name="6"/>
+                   <ButtonC className={`${s.btnMINUS} ${s.backgroun3}`} name="-" id='-'/>
 
-                <ButtonC className={s.btn7} name="7"/>
-                <ButtonC className={s.btn8} name="8"/>
-                <ButtonC className={s.btn9} name="9"/>
-                <ButtonC className={`${s.btnX} ${s.backgroun3}`} name="x" id='x'/>
+                   <ButtonC className={s.btn7} name="7"/>
+                   <ButtonC className={s.btn8} name="8"/>
+                   <ButtonC className={s.btn9} name="9"/>
+                   <ButtonC className={`${s.btnX} ${s.backgroun3} `} name="x" id='x'/>
 
-                <ButtonC className={`${s.btnONEX} ${s.backgroun3}`} img={imgInverse} id={'1/x'}/>
-                <ButtonC className={`${s.btnKVADRAT} ${s.backgroun3}`} img={imgSquare} id={'x^2'}/>
-                <ButtonC className={`${s.btnKOREN} ${s.backgroun3}`} img={imgRoot} id="root(x)"/>
-                <ButtonC className={`${s.btnDELEN} ${s.backgroun3}`} name='/'/>
+                   <ButtonC className={`${s.btnONEX} ${s.backgroun3}`} img={imgInverse} id={'1/x'}/>
+                   <ButtonC className={`${s.btnKVADRAT} ${s.backgroun3}`} img={imgSquare} id={'x^2'}/>
+                   <ButtonC className={`${s.btnKOREN} ${s.backgroun3}`} img={imgRoot} id="root(x)"/>
+                   <ButtonC className={`${s.btnDELEN} ${s.backgroun3}`} name='/'/>
 
-                <ButtonC className={`${s.btnPROC} ${s.backgroun3}`} name="%"/>
-                <ButtonC className={`${s.btnCE} ${s.backgroun3}`} name="CE"/>
-                <ButtonC className={`${s.btnC} ${s.backgroun3}`} name="C"/>
-                <ButtonC className={`${s.btnBACK} ${s.backgroun3}`} name="&#10237;" id='backspace'/>
+                   <ButtonC className={`${s.btnPROC} ${s.backgroun3}`} name="%"/>
+                   <ButtonC className={`${s.btnCE} ${s.backgroun3}`} name="CE"/>
+                   <ButtonC className={`${s.btnC} ${s.backgroun3}`} name="C"/>
+                   <ButtonC className={`${s.btnBACK} ${s.backgroun3}`} name="&#10237;" id='backspace'/>
 
-                <MemMenuConatienr className={s.memMenu} dis={this.props.isActiveMemMenu||this.props.isActiveHistoryMenu} bg={bg()===s.backgroun2?true:false} init={{size:"XXL"}} />
+                   <MemMenuConatienr className={s.memMenu} dis={this.props.isActiveMemMenu||this.props.isActiveHistoryMenu} bg={bg()===s.backgroun2?true:false} init={{size:"XXL"}} />
 
-                <InputC className={`${s.input} ${bg()} `}/>
-                <Input2C className={`${s.inputUP} ${bg()}`}/>
+                   <InputC className={`${s.input} ${bg()} `}/>
+                   <Input2C className={`${s.inputUP} ${bg()}`}/>
 
-                <div className={s.label}>Калькулятор</div>
-                {this.props.sizeOfMyCalc==="XL"&&<ButtonC className={`${s.btnCLOSE} ${bg()}`} name="x"/>}
-                {this.props.sizeOfMyCalc==="XL"&&<ButtonC className={`${s.btnRollUp} ${bg()}`} name="-"/>}
-                {this.props.sizeOfMyCalc==="XL"&&<ButtonC className={`${s.btnSIDE} ${bg()}`} name="&#10720;"/>}
+                   <div className={s.label}>Калькулятор</div>
+                {this.props.sizeOfMyCalc==="XL"&&<ButtonC className={`${s.btnCLOSE} ${bg()} ${s.fontMater}`} name=""/>}
+                {this.props.sizeOfMyCalc==="XL"&&<ButtonC className={`${s.btnRollUp} ${bg()} ${s.fontMater}`} name=""/>}
+                {this.props.sizeOfMyCalc==="XL"&&<ButtonC className={`${s.btnSIDE} ${bg()} ${s.fontMater}`} name=""/>}
 
                 {this.props.sizeOfMyCalc==="XL"&&<ButtonC className={`${s.btnHIST} ${bg()}`} img={imgHist} title={'Журнал (CTRL+H)'} id={'Hist'}/>}
                 {this.props.sizeOfMyCalc==="XXL"&&<XXLBlockContainer />}

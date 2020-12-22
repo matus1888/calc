@@ -16,6 +16,7 @@ const SET_CURRENT_VALUE='setCv';
 const BTN_HIST='btnHistory';
 const RESIZE_WINDOW='resizeWindow';
 const SET_HIST_OR_MEM='historyOrMem';
+const CLEAR_HIST='clearHistory';
 
 
 let initialState= {
@@ -28,7 +29,7 @@ let initialState= {
     activeHistory: false,
     historyValue: localStorage.getItem('historyOfCalc')?JSON.parse(localStorage.getItem('historyOfCalc')):[],
     sizeOfWindow: window.innerWidth >= 916 ? "XXL" : "XL",
-    histOrMem: true
+    histOrMem: false
 }
 let mainReducer= (state=initialState, action) =>{
     const float=(n)=>{
@@ -50,6 +51,12 @@ let mainReducer= (state=initialState, action) =>{
     }
     }
     switch (action.type) {
+        case CLEAR_HIST:{
+            localStorage.clear()
+            return {
+                ...state, historyValue: localStorage.getItem('historyOfCalc')?JSON.parse(localStorage.getItem('historyOfCalc')):[]
+            }
+        }
         case ADD_SYMBOL: {
             // console.log(state)
             let symbol = action.symbol;
@@ -85,7 +92,6 @@ let mainReducer= (state=initialState, action) =>{
                 bufferValue: state.currentValue,
                 carriageReturn: true,
                 commaSign: !float(state.currentValue)
-                    //todo  сделай чтобы по нажатию на плюс писался журнал и сделай сам журнал
             }
             :{
                     ...state,
@@ -264,6 +270,7 @@ export const actCrSetCurrentValue=(value)=>({type:SET_CURRENT_VALUE, value})
 export const actCrHIST=()=>({type:BTN_HIST})
 export const actCrResize=()=>({type:RESIZE_WINDOW})
 export const actCrHistOrMem=()=>({type:SET_HIST_OR_MEM})
+export const actCrClearHistory=()=>({type:CLEAR_HIST})
 
 
 

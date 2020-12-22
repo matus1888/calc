@@ -44,6 +44,7 @@
     width: 3px;
     background-color: #dcdcdc;
 }
+
 .buffer::-webkit-scrollbar-thumb {
     border-radius: 2px;
     -webkit-box-shadow: inset 0 0 1px rgba(114, 114, 114, 0.3);
@@ -52,28 +53,28 @@
 .logVal{
     font-size: 50%;
 }
-@media screen and (min-width:916px) {
-    .buffer{
-        background: #d9dadb;
-        grid-column: 1/span 21;
-        grid-row: 9/span 12;
-        opacity: 0%;
-        text-align: right;
-        font-weight: bold;
-        transition: all  500ms;
-        font-size:160% ;
-        overflow: auto;
-        z-index: -1;
-    }
-    .bufferActive{
-        background: #d8d9da;
-        grid-column: 21/span 1 ;
-        grid-row: 9/span 12 ;
-        text-align: right;
-        z-index: 10;
-        opacity: 100%;
-        font-weight: bold;
-        overflow: auto;
-        font-size:160% ;
-    }
-}
+/*@media screen and (min-width:916px) {*/
+/*    .buffer{*/
+/*        background: #d9dadb;*/
+/*        grid-column: 1/span 21;*/
+/*        grid-row: 9/span 12;*/
+/*        opacity: 0%;*/
+/*        text-align: right;*/
+/*        font-weight: bold;*/
+/*        transition: all  500ms;*/
+/*        font-size:160% ;*/
+/*        overflow: auto;*/
+/*        z-index: -1;*/
+/*    }*/
+/*    .bufferActive{*/
+/*        background: #d8d9da;*/
+/*        grid-column: 21/span 1 ;*/
+/*        grid-row: 9/span 12 ;*/
+/*        text-align: right;*/
+/*        z-index: 10;*/
+/*        opacity: 100%;*/
+/*        font-weight: bold;*/
+/*        overflow: auto;*/
+/*        font-size:160% ;*/
+/*    }*/
+/*}*/
