@@ -4,7 +4,6 @@ import ButtonC from "./ButtonC";
 import InputC from "./InputC";
 import Input2C from "./Input2C";
 import img from "../images/menu.gif"
-import imgHist from '../images/history-black-36dp/2x/baseline_history_black_36dp.png'
 import SideMenu from "./sideMenu/SideMenu";
 import MemBuffC from "./memMenu/MemBuffC";
 import HistBuffC from "./historyBuffer/HistBuffC";
