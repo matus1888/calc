@@ -3,7 +3,7 @@
     grid-row: 1/span 21;
     display: grid;
     grid-template-areas: "a" "b" "bb" "c" "d";
-    grid-template-rows: 8% 8% 1% 78% 5%;
+    grid-template-rows: 8% 8% 1% 73% 10%;
     padding-left: 10px;
 
 }
@@ -51,33 +51,40 @@
 
 .side {
     border: none;
-    font-family: Material;
+    height: 30px;
+    width: 30px;
 }
 
 .side:hover {
     border: none;
-    font-family: Material;
+    height: 30px;
+    width: 30px;
 }
 
 .fullScreen {
     border: none;
-    font-family: Material;
+    height: 30px;
+    width: 30px;
 }
 
 .fullScreen:hover {
     border: none;
-    font-family: Material;
+    height: 30px;
+    width: 30px;
 }
 
 .close {
     border: none;
-    font-family: Material;
+    height: 30px;
+    width: 30px;
 }
 
 .close:hover {
     background-color: red;
-    font-family: Material;
+    color: white;
     border: none;
+    height: 30px;
+    width: 30px;
 }
 
 .c::-webkit-scrollbar-track {
@@ -118,13 +125,19 @@
 }
 
 .buttonDelete {
-    font-family: Material;
     background: #f0eef0;
     border: none;
-
+    height: 50px;
+    width: 50px;
 }
-
 .buttonDelete:hover {
-    font-family: Material;
     border: none;
+    height: 50px;
+    width: 50px;
+}
+.fontSeguiSym{
+    font-family: SeguiSym;
+}
+.fontWinCalc{
+    font-family: WinCalc;
 }

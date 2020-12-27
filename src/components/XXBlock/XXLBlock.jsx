@@ -10,9 +10,9 @@ const XXLBlock=(props)=>{
         </div>)}
     return (<div className={s.XXLVBlock}>
         <div className={s.a} >
-            <button className={s.side}></button>
-            <button className={s.fullScreen}></button>
-            <button className={s.close}></button>
+            <button className={`${s.side} ${s.fontSeguiSym}`}>&#x2013;</button>
+            <button className={`${s.fullScreen} ${s.fontSeguiSym}`}>&#x20E3;</button>
+            <button className={`${s.close} ${s.fontSeguiSym}`}>&#x2715;</button>
         </div>
         <div className={s.b}>
             <span className={s.history} onClick={props.switchMenu}>Журнал</span>
@@ -28,8 +28,8 @@ const XXLBlock=(props)=>{
             </div>}
         </div>
         <div className={s.d}>
-            <button className={s.buttonDelete}
-                    onClick={props.clearHistory}></button>
+            <button className={`${s.buttonDelete} ${s.fontWinCalc}`}
+                    onClick={props.clearHistory} >&#xE74D;</button>
         </div>
             </div>)
 }

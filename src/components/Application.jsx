@@ -4,9 +4,6 @@ import ButtonC from "./ButtonC";
 import InputC from "./InputC";
 import Input2C from "./Input2C";
 import img from "../images/menu.gif"
-import imgSquare from "../images/square.gif"
-import imgInverse from "../images/revers.gif"
-import imgRoot from "../images/root.gif"
 import imgHist from '../images/history-black-36dp/2x/baseline_history_black_36dp.png'
 import SideMenu from "./sideMenu/SideMenu";
 import MemBuffC from "./memMenu/MemBuffC";
@@ -68,42 +65,42 @@ class Application extends React.Component {
            <SideMenu isActive={this.props.isActive} />
             <div className={s.item2}> </div>
             <div className={`${s.item} ${bg()}`}>
-                   <ButtonC className={`${s.btnMENU} ${bg()}`} img={img} title={'Открыть навигацию'} id='menu'/>
+                   <ButtonC className={`${s.btnMENU} ${bg()}`}  img={img} title={'Открыть навигацию'} id='menu'/>
                    <div className={s.divMODE}>Обычный</div>
 
                    <MemBuffC  isActive={this.props.isActiveMemMenu}/>
                    <HistBuffC isActive={this.props.isActiveHistoryMenu}/>
                    <CurtainContainer className={s.curtain} isActive={this.props.isActiveMemMenu||this.props.isActiveHistoryMenu} />
                    <CurtainAllContainer />
-                   <ButtonC className={s.btnPM} name="+/-"/>
+                   <ButtonC className={`${s.btnPM} ${s.fontWinCalc}`} name="&#xF898;" id="+/-"/>
                    <ButtonC className={s.btn0} name="0"/>
                    <ButtonC className={s.btnZPT} name=","/>
-                   <ButtonC className={s.btnRAVNO} name="="/>
+                   <ButtonC className={`${s.btnRAVNO} ${s.fontWinCalc}`} id="=" name="&#xE94E;"/>
 
                    <ButtonC className={s.btn1} name="1"/>
                    <ButtonC className={s.btn2} name="2"/>
                    <ButtonC className={s.btn3} name="3"/>
-                   <ButtonC className={`${s.btnPLUS} ${s.backgroun3}`} name="+"/>
+                   <ButtonC className={`${s.btnPLUS} ${s.backgroun3} ${s.fontWinCalc}`} name="&#xE948;" id='+'/>
 
                    <ButtonC className={s.btn4} name="4"/>
                    <ButtonC className={s.btn5} name="5"/>
                    <ButtonC className={s.btn6} name="6"/>
-                   <ButtonC className={`${s.btnMINUS} ${s.backgroun3}`} name="-" id='-'/>
+                   <ButtonC className={`${s.btnMINUS} ${s.backgroun3} ${s.fontWinCalc}`} name="&#xE949;" id='-'/>
 
                    <ButtonC className={s.btn7} name="7"/>
                    <ButtonC className={s.btn8} name="8"/>
                    <ButtonC className={s.btn9} name="9"/>
-                   <ButtonC className={`${s.btnX} ${s.backgroun3} `} name="x" id='x'/>
+                   <ButtonC className={`${s.btnX} ${s.backgroun3} ${s.fontWinCalc}`} name="&#xe947;" id='x'/>
 
-                   <ButtonC className={`${s.btnONEX} ${s.backgroun3}`} img={imgInverse} id={'1/x'}/>
-                   <ButtonC className={`${s.btnKVADRAT} ${s.backgroun3}`} img={imgSquare} id={'x^2'}/>
-                   <ButtonC className={`${s.btnKOREN} ${s.backgroun3}`} img={imgRoot} id="root(x)"/>
-                   <ButtonC className={`${s.btnDELEN} ${s.backgroun3}`} name='/'/>
+                   <ButtonC className={`${s.btnONEX} ${s.backgroun3} ${s.fontWinCalc} `}  name="&#xF7C9;" id={'1/x'}/>
+                   <ButtonC className={`${s.btnKVADRAT} ${s.backgroun3} ${s.fontWinCalc}`} name="&#xF7C8;" id={'x^2'}/>
+                   <ButtonC className={`${s.btnKOREN} ${s.backgroun3} ${s.fontWinCalc}`} name="&#xF899;" id="root(x)"/>
+                   <ButtonC className={`${s.btnDELEN} ${s.backgroun3} ${s.fontWinCalc}`} id="/" name="&#xE94A;"/>
 
-                   <ButtonC className={`${s.btnPROC} ${s.backgroun3}`} name="%"/>
-                   <ButtonC className={`${s.btnCE} ${s.backgroun3}`} name="CE"/>
+                   <ButtonC className={`${s.btnPROC} ${s.backgroun3} ${s.fontWinCalc}`} name="&#xE94C;" id='/' />
+                   <ButtonC className={`${s.btnCE} ${s.backgroun3} ${s.fontSegoeUI}`} name='CE' />
                    <ButtonC className={`${s.btnC} ${s.backgroun3}`} name="C"/>
-                   <ButtonC className={`${s.btnBACK} ${s.backgroun3}`} name="&#10237;" id='backspace'/>
+                   <ButtonC className={`${s.btnBACK} ${s.backgroun3} ${s.fontWinCalc}`} name="&#xE94F;" id='backspace'/>
 
                    <MemMenuConatienr className={s.memMenu} dis={this.props.isActiveMemMenu||this.props.isActiveHistoryMenu} bg={bg()===s.backgroun2?true:false} init={{size:"XXL"}} />
 
@@ -111,11 +108,11 @@ class Application extends React.Component {
                    <Input2C className={`${s.inputUP} ${bg()}`}/>
 
                    <div className={s.label}>Калькулятор</div>
-                {this.props.sizeOfMyCalc==="XL"&&<ButtonC className={`${s.btnCLOSE} ${bg()} ${s.fontMater}`} name=""/>}
-                {this.props.sizeOfMyCalc==="XL"&&<ButtonC className={`${s.btnRollUp} ${bg()} ${s.fontMater}`} name=""/>}
-                {this.props.sizeOfMyCalc==="XL"&&<ButtonC className={`${s.btnSIDE} ${bg()} ${s.fontMater}`} name=""/>}
+                {this.props.sizeOfMyCalc==="XL"&&<ButtonC className={`${s.btnCLOSE} ${bg()} ${s.fontSeguiSym}`} name="&#x2715;"/>}
+                {this.props.sizeOfMyCalc==="XL"&&<ButtonC className={`${s.btnRollUp} ${bg()} ${s.fontSeguiSym}`} name="&#x2013;"/>}
+                {this.props.sizeOfMyCalc==="XL"&&<ButtonC className={`${s.btnSIDE} ${bg()} ${s.fontSeguiSym}`} name="&#x20E3;"/>}
 
-                {this.props.sizeOfMyCalc==="XL"&&<ButtonC className={`${s.btnHIST} ${bg()}`} img={imgHist} title={'Журнал (CTRL+H)'} id={'Hist'}/>}
+                {this.props.sizeOfMyCalc==="XL"&&<ButtonC className={`${s.btnHIST} ${bg()} ${s.fontWinCalc}`} name="&#xE81C;" title={'Журнал (CTRL+H)'} id={'Hist'}/>}
                 {this.props.sizeOfMyCalc==="XXL"&&<XXLBlockContainer />}
                 <div className={s.item3}></div>
             </div>

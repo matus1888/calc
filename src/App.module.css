@@ -56,13 +56,13 @@ div button:active{
 	background: #c2c0c0
 }
 .btnPM{
-	grid-column: 1/span 6;
+	grid-column: 1/span 5;
 	grid-row: 19 / span 2;
 }
 
 
 .btnMENU{
-	grid-column: 1/span 2;
+	grid-column: 1/span 3;
 	grid-row: 2/ span 2;
 	border: none;
 	z-index: 3;
@@ -220,6 +220,7 @@ div button:active{
 }
 .btnCLOSE:hover{
 	background-color: #ff0000;
+	color: #F0EEF0;
 	border: none;
 }
 .btnSIDE{
@@ -257,15 +258,29 @@ background: #f7f7f7;
 }
 @font-face {
 
-font-family: "Segoe UI";
+font-family: "WinCalc";
 
-src: url("./fonts/9404.ttf") format("truetype");
 	font-style: normal;
+	src: url("./fonts/CalcMDL2.ttf") format("truetype");
+	font-weight: normal;
+}
+@font-face {
+
+	font-family: "SegoeUI";
+
+	font-style: normal;
+	src: url("./fonts/9404.ttf") format("truetype");
 	font-weight: normal;
 }
 @font-face {
 	font-family: "Material";
 	src: url('./fonts/MaterialIcons-Regular.ttf') format('truetype');
+	font-style: normal;
+	font-weight: normal;
+}
+@font-face {
+	font-family: "SeguiSym";
+	src: url('./fonts/seguisym.ttf') format('truetype');
 	font-style: normal;
 	font-weight: normal;
 }
@@ -298,4 +313,10 @@ src: url("./fonts/9404.ttf") format("truetype");
 
 .fontMater{
 	font-family: Material;
+}
+.fontWinCalc{
+	font-family: WinCalc;
+}
+.fontSeguiSym{
+	font-family: SeguiSym;
 }

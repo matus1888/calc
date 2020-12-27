@@ -7,15 +7,15 @@ const Button = (props) => {
             (x===5)||(x===6)||(x===7)||(x===8)||(x===9)||(x===0);
         if (numbersButtons){
             props.addSymbol(props.name)
-        }else if(props.name==='='){
+        }else if(props.id==='='){
             props.clickEQUALS(props.cV)
         }else if(props.id==='-'){
             props.clickMINUS(props.cV)
-        }else if(props.name==='+'){
+        }else if(props.id==='+'){
             props.clickPLUS(props.cV)
         }else if(props.id==='x'){
             props.clickMULT(props.cV)
-        }else if(props.name==='/'){
+        }else if(props.id==='/'){
             props.clickSHARE(props.cV)
         }else if(props.name==='C'){
             props.clickCLEAR()
@@ -33,7 +33,7 @@ const Button = (props) => {
             props.clickBACKSPACE(props.cV)
         }else if(props.id==='menu'){
             props.clickMENU()
-        }else if(props.name==='+/-'){
+        }else if(props.id==='+/-'){
             props.clickPM()
         }else if(props.id==='Hist'){
             props.clickHSIT()
