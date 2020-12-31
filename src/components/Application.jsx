@@ -22,7 +22,15 @@ class Application extends React.Component {
     keyFunction(event){
         //todo all calc buttons on real keyboard keys
         let condition=(numpad, digit=true)=>{return ((event.keyCode===numpad)||(event.keyCode===digit))}
+        let shiftCondition=(keyKey)=> {return ((event.keyCode===keyKey)&&event.shiftKey)}
+
         if(condition(97,49)) {this.props.pressKey('1')
+            //this is "SHIFT+ key's"  порядок кейсов имеет значение!!!!
+        }else if(shiftCondition(189)){this.props.pressKeyMINUS()
+        }else if(shiftCondition(187)){this.props.pressKeyPLUS()
+        }else if(shiftCondition(56)){this.props.pressKeyMULT()
+        }else if(shiftCondition(54)){this.props.pressKeySHARE()
+            //this is number key's
         }else if(condition(98,50)){this.props.pressKey('2')
         }else if(condition(99,51)){this.props.pressKey('3')
         }else if(condition(100,52)){this.props.pressKey('4')
@@ -32,6 +40,8 @@ class Application extends React.Component {
         }else if(condition(104,56)){this.props.pressKey('8')
         }else if(condition(105,57)){this.props.pressKey('9')
         }else if(condition(96,48)){this.props.pressKey('0')
+
+            //this is action key's
         }else if(condition(111)){this.props.pressKeySHARE()
         }else if(condition(106)){this.props.pressKeyMULT()
         }else if(condition(189,109)){this.props.pressKeyMINUS()

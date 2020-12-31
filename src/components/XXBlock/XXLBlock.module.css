@@ -13,11 +13,17 @@
     padding-left: 10px;
     vertical-align: middle;
 }
+.history:hover{
+    cursor: pointer
+}
 
 .memory {
     font-weight: bold;
     padding-left: 20px;
     vertical-align: middle;
+}
+.memory:hover{
+    cursor: pointer
 }
 
 .a {

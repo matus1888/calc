@@ -42,9 +42,9 @@ let mainReducer= (state=initialState, action) =>{
                 return Number(x-y);}
             case "+" :{return Number(x)+Number(y);}
             case "x" :{return Number(x)*Number(y);}
-            case "/" :{return Number(x)/Number(y);}
+            case "/" :{return Number(y)!==0? Number(x)/Number(y):'Деление на ноль не возможно'}
             case "square":{return (Number(y)*Number(y))}
-            case "1/x":{return 1/Number(y)}
+            case "1/x":{return Number(y)!==0? 1/Number(y): 'Деление на ноль не возможно'}
             case "root":{return Math.sqrt(Number(y))}
 
             default : {return y}
@@ -127,22 +127,22 @@ let mainReducer= (state=initialState, action) =>{
             }
         }
         case BTN_SHARE:{
-            return state.func===undefined?{
-                    ...state,
-                    func: "/", logValue: state.currentValue+"/",
-                    bufferValue: state.currentValue,
-                    carriageReturn: true,
-                    commaSign: !float(state.currentValue)
-                }
-                :{
-                    ...state,
-                    currentValue: calc(state.bufferValue, state.currentValue, state.func),
-                    func: "/", logValue: state.logValue + state.currentValue + "/",
-                    bufferValue: calc(state.bufferValue, state.currentValue, state.func),
-                    carriageReturn: true,
-                    commaSign: !float(calc(state.bufferValue, state.currentValue, state.func))
-                }
-        }
+                return state.func===undefined?{
+                        ...state,
+                        func: "/", logValue: state.currentValue+"/",
+                        bufferValue: state.currentValue,
+                        carriageReturn: true,
+                        commaSign: !float(state.currentValue)
+                    }
+                    :{
+                        ...state,
+                        currentValue: calc(state.bufferValue, state.currentValue, state.func),
+                        func: "/", logValue: state.logValue + state.currentValue + "/",
+                        bufferValue: calc(state.bufferValue, state.currentValue, state.func),
+                        carriageReturn: true,
+                        commaSign: !float(calc(state.bufferValue, state.currentValue, state.func))
+                    }
+            }
 
         case BTN_EQUALS:{
             let newLogVal=state.logValue+ state.currentValue+"=";
