@@ -148,8 +148,8 @@ let mainReducer= (state=initialState, action) =>{
             let newLogVal=state.logValue+ state.currentValue+"=";
             let newValue= calc(state.bufferValue, state.currentValue, state.func);
             let newArrVal={valH:newValue,logValH:newLogVal};
-            let Hist=state.historyValue;
-            Hist.push(newArrVal);
+            let Hist=[...state.historyValue];
+            Hist.unshift(newArrVal);
             return {
                 ...state,
                 currentValue: newValue,
@@ -165,8 +165,8 @@ let mainReducer= (state=initialState, action) =>{
         case BTN_SQUARE: {
             let newCV= calc(state.bufferValue, state.currentValue, "square")
             let newLV="sqr(" + state.currentValue + ")"
-            let sqHist=state.historyValue
-            sqHist.push({valH:newCV,logValH:newLV})
+            let sqHist=[...state.historyValue]
+            sqHist.unshift({valH:newCV,logValH:newLV})
             return {
                 ...state,
                 currentValue:newCV,
@@ -180,9 +180,9 @@ let mainReducer= (state=initialState, action) =>{
         }
         case BTN_ROOT: {
             let newCV=calc(state.bufferValue, state.currentValue, "root")
-            let hist=state.historyValue;
+            let hist=[...state.historyValue];
             let newLV="sqrt(" + state.currentValue + ")"
-            hist.push({valH:newCV,logValH:newLV})
+            hist.unshift({valH:newCV,logValH:newLV})
             return {
                 ...state,
                 currentValue: newCV,
@@ -197,8 +197,8 @@ let mainReducer= (state=initialState, action) =>{
                 case BTN_INVERSE: {
                     let newCV=calc(state.bufferValue, state.currentValue, "1/x");
                     let newLV="1/"+state.currentValue
-                    let invHist=state.historyValue
-                    invHist.push({valH:newCV,logValH:newLV})
+                    let invHist=[...state.historyValue]
+                    invHist.unshift({valH:newCV,logValH:newLV})
             return {
                     ...state,
                     currentValue: newCV,

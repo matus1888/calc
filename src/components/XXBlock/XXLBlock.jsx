@@ -1,14 +1,11 @@
 import React from 'react';
 import s from './XXLBlock.module.css';
+import ValuesComponent from "./ValuesContainer";
 
 
 class XXLBlock extends React.Component {
-    values() {
-        return  this.props.historyValue.map(value =>
-            <div key={(value.logValH + new Date().toLocaleString()).toString()}>
-                <div className={s.logVal}>{value.logValH}</div>
-                <div>{value.valH}</div>
-            </div>)
+    constructor(props) {
+        super(props);
     }
 
     render() {
@@ -28,7 +25,7 @@ class XXLBlock extends React.Component {
             </div>
             <div className={s.c}>
                 {this.props.histOrMem && <div>{this.props.mCell}</div>}
-                {!this.props.histOrMem && <div>{this.props.historyValue[0] ? this.values() : 'Журнала еще нет'}
+                {!this.props.histOrMem && <div>{this.props.historyValue[0] ? <ValuesComponent/> : 'Журнала еще нет'}
                 </div>}
             </div>
             <div className={s.d}>
