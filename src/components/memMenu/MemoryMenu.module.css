@@ -1,0 +1,17 @@
+.div {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+}
+
+.b {
+    grid-column: auto;
+    font-weight: bold;
+    font-size: 80%;
+}
+
+@media screen and (min-width: 916px) {
+    .div {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+    }
+}

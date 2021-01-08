@@ -4,9 +4,6 @@ import ValuesComponent from "./ValuesContainer";
 
 
 class XXLBlock extends React.Component {
-    constructor(props) {
-        super(props);
-    }
 
     render() {
         return (<div className={s.XXLVBlock}>

@@ -13,7 +13,8 @@
     padding-left: 10px;
     vertical-align: middle;
 }
-.history:hover{
+
+.history:hover {
     cursor: pointer
 }
 
@@ -22,7 +23,8 @@
     padding-left: 20px;
     vertical-align: middle;
 }
-.memory:hover{
+
+.memory:hover {
     cursor: pointer
 }
 
@@ -136,14 +138,17 @@
     height: 50px;
     width: 50px;
 }
+
 .buttonDelete:hover {
     border: none;
     height: 50px;
     width: 50px;
 }
-.fontSeguiSym{
+
+.fontSeguiSym {
     font-family: SeguiSym;
 }
-.fontWinCalc{
+
+.fontWinCalc {
     font-family: WinCalc;
 }

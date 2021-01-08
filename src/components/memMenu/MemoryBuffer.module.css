@@ -1,0 +1,24 @@
+.buffer {
+    background: #d9dadb;
+    grid-column: 1/span 20;
+    grid-row: 9/span 12;
+    opacity: 0%;
+    text-align: right;
+    font-weight: bold;
+    overflow: auto;
+    transition: all 500ms;
+    font-size: 160%;
+    z-index: -1;
+}
+
+.bufferActive {
+    background: #d8d9da;
+    grid-column: 1/span 20;
+    grid-row: 9/span 12;
+    text-align: right;
+    z-index: 10;
+    overflow: auto;
+    opacity: 100%;
+    font-weight: bold;
+    font-size: 160%;
+}
