@@ -6,7 +6,7 @@ import memMenuReducer from "./memMenuReducer";
 let reducers=combineReducers({
     mainReducer: mainReducer,
     menuI: sideMenuReducer,
-    memMenu: memMenuReducer
+    memMenu: memMenuReducer 
 })
 let store=createStore(reducers);
 
