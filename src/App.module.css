@@ -1,10 +1,11 @@
 .grid {
     display: grid;
-    grid-template-areas: "field body field2";
-    grid-template-columns: 25% max-content 25%;
+    grid-template-areas: " body ";
+    grid-template-columns:  100%;
+    grid-template-rows: 100%;
     background: rgba(255, 255, 255, 0);
-    width: 100%;
-    height: 100%;
+
+
 }
 
 .item2 {
@@ -18,19 +19,28 @@
 }
 
 .item {
-    margin-top: 5%;
-    max-height: 550px;
     display: grid;
+    grid-area: body;
+    height: 100%;
+    width: 100%;
     grid-template-columns: repeat(20, 1fr);
     grid-template-rows: repeat(20, 1fr);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Параметры тени */
     border: 1px solid #575656;
     /*padding: 10px;*/
-    grid-area: body;
+
 
 }
 
 @media screen and (min-width: 916px) {
+    .grid {
+        display: grid;
+        grid-template-areas: "field body field2";
+        grid-template-columns: 25% max-content 25%;
+        background: rgba(255, 255, 255, 0);
+        width: 100%;
+        height: 100%;
+    }
     .item {
         margin-top: 5%;
         max-height: 550px;
