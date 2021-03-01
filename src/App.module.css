@@ -22,7 +22,7 @@
     display: grid;
     grid-area: body;
     height: 100%;
-    width: 100%;
+    max-height: 100vh;
     grid-template-columns: repeat(20, 1fr);
     grid-template-rows: repeat(20, 1fr);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Параметры тени */
