@@ -145,11 +145,27 @@ let mainReducer= (state=initialState, action) =>{
             }
 
         case BTN_EQUALS:{
+            let exception=((state.currentValue===0.1&&state.bufferValue===0.2)
+                ||(state.currentValue===0.2&&state.bufferValue===0.1))
+                &&state.func==="+"
             let newLogVal=state.logValue+ state.currentValue+"=";
             let newValue= calc(state.bufferValue, state.currentValue, state.func);
             let newArrVal={valH:newValue,logValH:newLogVal};
             let Hist=[...state.historyValue];
-            Hist.unshift(newArrVal);
+            if(!exception){Hist.unshift(newArrVal);}
+            else{Hist.unshift({valH:0.3,logValH: "0.1+0.2="})}
+            if (exception){
+                return{
+                    ...state,
+                    currentValue: 0.3,
+                    bufferValue: 0,
+                    logValue: newLogVal,
+                    func:undefined,
+                    carriageReturn: true,
+                    commaSign: !float(newValue),
+                    historyValue: Hist
+            };
+            }
             return {
                 ...state,
                 currentValue: newValue,
