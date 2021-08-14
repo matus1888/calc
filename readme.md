@@ -1,9 +1,6 @@
 # Js clone of Windows Calculator
 ## _Small clone of windows calculator_
 
-
-[![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)]()
-
 This is my first project, the goal of which was to repeat as much as possible the visual design of the wine10 operating system calculator. The project is exclusively educational and does not claim anything
 
 ## Tech
