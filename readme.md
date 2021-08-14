@@ -1,7 +1,7 @@
 # Js clone of Windows Calculator
 ## _Small clone of windows calculator_
 
-[logo]: https://github.com/matus1888/calc/blob/main/calcScree.jpg
+![logo](https://github.com/matus1888/calc/blob/main/calcScree.jpg)
 This is my first project, the goal of which was to repeat as much as possible the visual design of the wine10 operating system calculator. The project is exclusively educational and does not claim anything
 
 ## Tech
